@@ -1,0 +1,254 @@
+<app-header></app-header>
+
+<div class="container" >
+  <div class="content" fxLayout="row" fxLayout.xs="column" [ngStyle.gt-xs]="{'min-height.vh': 68}">
+    <div fxFlex="25" fxFlex.xs="55">
+      <div class="content">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Profile Picture</mat-card-title>
+          </mat-card-header>
+          <img src="/assets/images/coming_soon.jpg" alt="">
+        </mat-card>
+      </div>
+    </div>
+    <div fxFlex="75" fxFlex.xs="15">
+      <div class="content">
+        <mat-card>
+          <mat-tab-group>
+            <mat-tab label="Basic Detail ">
+              <mat-card>
+                <div fxLayout="row" fxLayout.xs="column" ngClass.gt-md="user-info">
+                  <div fxFlex>
+                    <mat-icon>face</mat-icon>
+                    <span>First Name : John</span>
+                  </div>
+                  <div fxFlex>
+                    <mat-icon>face</mat-icon>
+                    <span>Middel Name : Mc</span>
+                  </div>
+                  <div fxFlex>
+                    <mat-icon>face</mat-icon>
+                    <span>Last Name : Deo</span>
+                  </div>
+                </div>
+                <div fxLayout="row" fxLayout.xs="column" ngClass.gt-md="user-info">
+
+                  <div fxFlex>
+                    <mat-icon>face</mat-icon>
+                    <span>Nick Name : John</span>
+                  </div>
+                  <div fxFlex>
+                    <mat-icon>face</mat-icon>
+                    <span>Title : Mr</span>
+                  </div>
+                  <div fxFlex>
+                    <mat-icon>wc</mat-icon>
+                    <span>Gender : Male</span>
+                  </div>
+                </div>
+
+                <div fxLayout="row" fxLayout.xs="column" ngClass.gt-md="user-info">
+                  <div fxFlex>
+                    <mat-icon>cake</mat-icon>
+                    <span>DOB : 12/01/1980</span>
+                  </div>
+                  <div fxFlex>
+                    <mat-icon>group</mat-icon>
+                    <span>Membership # : 987321</span>
+                  </div>
+                  <div fxFlex>
+                    <mat-icon>group</mat-icon>
+                    <span>Sin # : 124753</span>
+                  </div>
+                </div>
+              </mat-card>
+            </mat-tab>
+            <mat-tab label="Address">
+              <mat-card>
+                <div fxLayout="row" fxLayout.xs="column" ngClass.gt-md="user-info">
+                  <div fxFlex>
+                    <mat-icon>place</mat-icon>
+                    <span>Address : Sahibjada Ajit Singh Nagar (Mohali), Pahse 8B, Plot:- E195</span>
+                  </div>
+                  <div fxFlex>
+                    <mat-icon>place</mat-icon>
+                    <span>Address 2 : Sahibjada Ajit Singh Nagar (Mohali), Pahse 8B, Plot:- E195</span>
+                  </div>
+
+                </div>
+                <div fxLayout="row" fxLayout.xs="column" ngClass.gt-md="user-info">
+
+                  <div fxFlex>
+                    <mat-icon>place</mat-icon>
+                    <span>City : Mohali</span>
+                  </div>
+                  <div fxFlex>
+                    <mat-icon>map</mat-icon>
+                    <span>Country : India</span>
+                  </div>
+                  <div fxFlex>
+                    <mat-icon>map</mat-icon>
+                    <span>Province : Punjab</span>
+                  </div>
+                </div>
+
+                <div fxLayout="row" fxLayout.xs="column" ngClass.gt-md="user-info">
+                  <div fxFlex>
+                    <mat-icon>cake</mat-icon>
+                    <span>Postal : 160055</span>
+                  </div>
+                  <div fxFlex>
+                    <mat-icon>email</mat-icon>
+                    <span>Email : John@doe.com</span>
+                  </div>
+                  <div fxFlex>
+                    <mat-icon>calendar_today</mat-icon>
+                    <span>Address Effective Since : 12/1/1980</span>
+                  </div>
+                </div>
+                <div fxLayout="row" fxLayout.xs="column" ngClass.gt-md="user-info">
+                  <div fxFlex>
+                    <mat-icon>zoom_out_map</mat-icon>
+                    <span>Region : Punjab</span>
+                  </div>
+                  <div fxFlex>
+                    <mat-icon>place</mat-icon>
+                    <span>Valid Address : Yes</span>
+                  </div>
+                  <div fxFlex>
+                    <mat-icon>store_mall_directory</mat-icon>
+                    <span>Branch : Mohali</span>
+                  </div>
+                </div>
+
+                <div fxLayout="row" fxLayout.xs="column" ngClass.gt-md="user-info">
+                  <div fxFlex>
+                    <mat-icon>perm_phone_msg</mat-icon>
+                    <span>Contact Numbers</span>
+                  </div>
+                </div>
+                <div fxFlex fxLayout="column" fxLayout.lt-md="column">
+                  <div fxLayout="column" fxLayoutAlign="space-between none">
+                    <div fxFlex class="table-container">
+                      <mat-card>
+                        <div class="mat-table">
+                          <div class="mat-header-row" fxLayout="row">
+                            <div fxFlex class="mat-header-cell">Type</div>
+                            <div fxFlex class="mat-header-cell">Class</div>
+                            <div fxFlex class="mat-header-cell">Number</div>
+                          </div>
+                          <mat-divider></mat-divider>
+                          <div class="mat-row" fxLayout="row">
+                            <div fxFlex class="mat-cell">Home</div>
+                            <div fxFlex class="mat-cell">Primary</div>
+                            <div fxFlex class="mat-cell">123456</div>
+                          </div>
+                          <div class="mat-row" fxLayout="row">
+                            <div fxFlex class="mat-cell">Home</div>
+                            <div fxFlex class="mat-cell">Primary</div>
+                            <div fxFlex class="mat-cell">123456</div>
+                          </div>
+                        </div>
+                      </mat-card>
+                    </div>
+                    <div>
+                    </div>
+                  </div>
+                </div>
+              </mat-card>
+            </mat-tab>
+            <mat-tab label="GS Details">
+              <mat-card>
+                <div fxLayout="row" fxLayout.xs="column" ngClass.gt-md="user-info">
+                  <div fxFlex>
+                    <mat-icon>person_outline</mat-icon>
+                    <span>Is member? : Yes</span>
+                  </div>
+                  <div fxFlex>
+                    <mat-icon>pages</mat-icon>
+                    <span>Marker : </span>
+                  </div>
+                  <div fxFlex>
+                    <mat-icon>calendar_today</mat-icon>
+                    <span>GS Effective Date : 15/5/2014</span>
+                  </div>
+                  <div fxFlex>
+                    <mat-icon>calendar_today</mat-icon>
+                    <span>Last Not in GS Date : 15/5/2014</span>
+                  </div>
+                </div>
+              </mat-card>
+            </mat-tab>
+            <mat-tab label="Group Name">
+              <mat-card>
+                <div fxLayout="row" fxLayout.xs="column" ngClass.gt-md="user-info">
+                  <div fxFlex>
+                    <mat-icon>group</mat-icon>
+                    <span>Membership Status : Valid</span>
+                  </div>
+                  <div fxFlex>
+                    <mat-icon>group</mat-icon>
+                    <span>Memebership Effective Since : 15/5/2014</span>
+                  </div>
+                  <div fxFlex>
+                    <mat-icon>class</mat-icon>
+                    <span>Class : First Class</span>
+                  </div>
+                </div>
+                <div fxLayout="row" fxLayout.xs="column" ngClass.gt-md="user-info">
+                  <div fxFlex>
+                    <mat-icon>class</mat-icon>
+                    <span>Class Type : Class Type 1</span>
+                  </div>
+                  <div fxFlex>
+                    <mat-icon>class</mat-icon>
+                    <span>Class Effective : First</span>
+                  </div>
+                  <div fxFlex>
+                    <mat-icon>class</mat-icon>
+                    <span>Class Level : Level One</span>
+                  </div>
+                </div>
+                <div fxLayout="row" fxLayout.xs="column" ngClass.gt-md="user-info">
+                  <div fxFlex>
+                    <mat-icon>group</mat-icon>
+                    <span>Rsap # : 123458</span>
+                  </div>
+                  <div fxFlex>
+                    <mat-icon>group</mat-icon>
+                    <span>Rsap Status : Status One</span>
+                  </div>
+                  <div fxFlex>
+                    <mat-icon>group</mat-icon>
+                    <span>Rstatus Effective : 15/5/2014</span>
+                  </div>
+                </div>
+                <div fxLayout="row" fxLayout.xs="column" ngClass.gt-md="user-info">
+                  <div fxFlex>
+                    <mat-icon>how_to_reg</mat-icon>
+                    <span>Availability : Availabel</span>
+                  </div>
+                  <div fxFlex>
+                    <mat-icon>group</mat-icon>
+                    <span>Organization : Organization 1</span>
+                  </div>
+                  <div fxFlex>
+                    <mat-icon>directions</mat-icon>
+                    <span>Local : Local 1</span>
+                  </div>
+                </div>
+              </mat-card>
+            </mat-tab>
+          </mat-tab-group>
+
+        </mat-card>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<app-footer></app-footer>

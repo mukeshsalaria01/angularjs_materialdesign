@@ -1,0 +1,110 @@
+<div class="container-tbl">
+  <div fxLayout="column" fxLayoutAlign="stretch">
+    
+    <mat-card>
+        <div fxFlex>
+      <span> Membership table</span>
+      
+    <button class="add-member-btn" mat-raised-button (click)="redirectAddMemeber()" color="primary" align="end">Add Member</button>
+    <div class="clear-fix"></div>
+    </div>
+
+    </mat-card>
+  
+    <div fxFlex class="add-member-card">
+      <div class="table-responsive">
+        <mat-card>
+          <table datatable [dtOptions]="dtOptions" class="row-border hover">
+            <thead>
+              <tr>
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
+                <th>Nick Name</th>
+                <th>Title</th>
+                <th>Gender</th>
+                <!-- <th>DOB</th>
+              <th>Membership #</th>
+              <th>Sin #</th>
+              <th>Address 1</th>
+              <th>Address 2</th>
+              <th>City</th>
+              <th>Country</th>
+              <th>Province</th>
+              <th>Postal</th>
+              <th>Email</th>
+              <th>Address Effective Since</th>
+              <th>Region</th>
+              <th>Country</th>
+              <th>Address Valid</th>
+              <th>Branch</th>
+              <th>GS Member</th>
+              <th>Marker</th>
+              <th>GS Effective Date</th>
+              <th>Last Not in GS Date</th>
+              <th>Membership Status</th>
+              <th>Membership Effective Since</th>
+              <th>Class</th>
+              <th>Class Type</th>
+              <th>Class Effective</th>
+              <th>Class Level</th>
+              <th>Rsap #</th>
+              <th>Rsap Status</th>
+              <th>Rstatus Effective</th>
+              <th>Availability</th>
+              <th>Organization</th>
+              <th>Local</th> -->
+              <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let member of members; let i = index">
+                
+                <td>{{member.basicDetails.fName}}</td>
+                <td>{{member.basicDetails.mName}}</td>
+                <td>{{member.basicDetails.lName}}</td>
+                <td>{{member.basicDetails.nName}}</td>
+                <td>{{member.basicDetails.title}}</td>
+                <td>{{member.basicDetails.gender}}</td>
+                <!-- <td>{{member.basicDetails.dob}}</td>
+              <td>{{member.basicDetails.membershipNumber}}</td>
+              <td>{{member.basicDetails.sinNumber}}</td>
+              <td>{{member.address.address1}}</td>
+              <td>{{member.address.address2}}</td>
+              <td>{{member.address.city}}</td>
+              <td>{{member.address.country}}</td>
+              <td>{{member.address.province}}</td>
+              <td>{{member.address.postal}}</td>
+              <td>{{member.address.email}}</td>
+              <td>{{member.address.addressEffectiveSince}}</td>
+              <td>{{member.address.validAddress}}</td>
+              <td>{{member.address.region}}</td>
+              <td>{{member.address.branch}}</td>
+              <td>{{member.gsDetails.isMember}}</td>
+              <td>{{member.gsDetails.marker}}</td>
+              <td>{{member.gsDetails.gsEffectiveDate}}</td>
+              <td>{{member.gsDetails.lastNotInGsDate}}</td>
+              <td>{{member.groupName.membershipEffectiveSince}}</td>
+              <td>{{member.groupName.membershipStatus}}</td>
+              <td>{{member.groupName.class}}</td>
+              <td>{{member.groupName.classType}}</td>
+              <td>{{member.groupName.classEffective}}</td>
+              <td>{{member.groupName.classLevel}}</td>
+              <td>{{member.groupName.rsapNumber}}</td>
+              <td>{{member.groupName.rsapStatus}}</td>
+              <td>{{member.groupName.rstatusEffective}}</td>
+              <td>{{member.groupName.availabilty}}</td>
+              <td>{{member.groupName.organization}}</td>
+              <td>{{member.groupName.local}}</td> -->
+              <td><div class="button-row">
+                  <button mat-raised-button (click)="edit(members , i)" color="primary">Edit</button>
+                  <button mat-raised-button (click)="delete(members , i)" color="warn">Delete</button>
+                </div></td>
+              </tr>
+            </tbody>
+          </table>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,169 @@
+<div fxLayout="column" fxLayoutAlign="space-between stretch" [formGroup]="parentForm" *ngFor="let member of memberChild">      
+        <div fxFlex fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="30px">
+          <div fxFlex>
+              <mat-form-field  class="full-width">
+                  <mat-select placeholder="Membership Status" 
+                  name="membershipStatus" 
+                  formControlName="membershipStatus"
+                  value="{{member.groupName.membershipStatus}}" 
+                  [ngModel]="member.groupName.membershipStatus">
+                    <mat-option *ngFor="let membershipStatus of membershipStatus" [value]="membershipStatus.value">
+                      {{ membershipStatus.viewValue }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+          </div>
+          <div fxFlex>
+              <mat-form-field  class="full-width">
+                  <input matInput [matDatepicker]="memberSince" 
+                  placeholder="Membership Effective Since"  
+                  name="membershipEffectiveSince" 
+                  formControlName="membershipEffectiveSince"
+                  value="{{member.groupName.membershipEffectiveSince}}" 
+                  [ngModel]="member.groupName.membershipEffectiveSince">
+                  <mat-datepicker-toggle matSuffix [for]="memberSince"></mat-datepicker-toggle>
+                  <mat-datepicker #memberSince></mat-datepicker>
+                </mat-form-field>
+          </div>
+          <div fxFlex>
+              <mat-form-field  class="full-width">
+                  <mat-select placeholder="Class" 
+                  name="class" 
+                  formControlName="class"
+                  value="{{member.groupName.class}}" 
+                  [ngModel]="member.groupName.class">
+                    <mat-option *ngFor="let class of classes" [value]="class.value">
+                      {{ class.viewValue }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+          </div>
+         
+        </div>
+        <div fxFlex fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="30px">  
+            <div fxFlex>
+                <mat-form-field  class="full-width">
+                    <mat-select placeholder="Class Type" 
+                    name="classType" 
+                    formControlName="classType"
+                    value="{{member.groupName.classType}}" 
+                    [ngModel]="member.groupName.classType">
+                      <mat-option *ngFor="let classTypes of classesType" [value]="classTypes.value">
+                        {{ classTypes.viewValue }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+          <div fxFlex>
+              <mat-form-field  class="full-width">
+                  <mat-select placeholder="Class Effective" 
+                  name="classEffective" 
+                  formControlName="classEffective"
+                  value="{{member.groupName.classEffective}}" 
+                  [ngModel]="member.groupName.classEffective">
+                    <mat-option *ngFor="let classEffective of classesEffective" [value]="classEffective.value">
+                      {{ classEffective.viewValue }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+          </div>
+  
+          <div fxFlex>
+              <mat-form-field  class="full-width">
+                  <mat-select placeholder="Class Level" 
+                  name="classLevel" 
+                  formControlName="classLevel"
+                  value="{{member.groupName.classLevel}}" 
+                  [ngModel]="member.groupName.classLevel">
+                    <mat-option *ngFor="let classLevel of classesLevel" [value]="classLevel.value">
+                      {{ classLevel.viewValue }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+            </div>            
+        </div> 
+
+        <div fxFlex fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="30px">
+            <div fxFlex>
+                <mat-form-field class="full-width">
+                  <input matInput placeholder="Rsap #"  
+                  name="rsapNumber" 
+                  formControlName="rsapNumber"
+                  value="{{member.groupName.rsapNumber}}" 
+                  [ngModel]="member.groupName.rsapNumber">
+                </mat-form-field>
+              </div>
+         
+              <div fxFlex>
+              <mat-form-field  class="full-width">
+                  <mat-select placeholder="Rsap Status" 
+                  name="rsapStatus" 
+                  formControlName="rsapStatus"
+                  value="{{member.groupName.rsapStatus}}" 
+                  [ngModel]="member.groupName.rsapStatus">
+                    <mat-option *ngFor="let rsapStatus of rsapStatuses" [value]="rsapStatus.value">
+                      {{ rsapStatus.viewValue }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+          </div>
+         
+          <div fxFlex>
+              <mat-form-field  class="full-width">
+                  <input matInput [matDatepicker]="rstatusEffective" 
+                  placeholder="Rstatus Effective " 
+                  name="rstatusEffective" 
+                  formControlName="rstatusEffective"
+                  value="{{member.groupName.rstatusEffective}}" 
+                  [ngModel]="member.groupName.rstatusEffective">
+                  <mat-datepicker-toggle matSuffix [for]="rstatusEffective"></mat-datepicker-toggle>
+                  <mat-datepicker #rstatusEffective></mat-datepicker>
+                </mat-form-field>
+          </div>
+
+        </div>
+
+        <div fxFlex fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="30px">  
+            <div fxFlex>
+                <mat-form-field  class="full-width">
+                    <mat-select placeholder="Availability" 
+                    name="availabilty" 
+                    formControlName="availabilty"
+                    value="{{member.groupName.availabilty}}" 
+                    [ngModel]="member.groupName.availabilty">
+                      <mat-option *ngFor="let availability of availabilities" [value]="availability.value">
+                        {{ availability.viewValue }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+          <div fxFlex>
+              <mat-form-field  class="full-width">
+                  <mat-select placeholder="Organization" 
+                  name="organization" 
+                  formControlName="organization"
+                  value="{{member.groupName.organization}}" 
+                  [ngModel]="member.groupName.organization">
+                    <mat-option *ngFor="let organization of organizations" [value]="organization.value">
+                      {{ organization.viewValue }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+          </div>
+  
+          <div fxFlex>
+              <mat-form-field  class="full-width">
+                  <mat-select placeholder="Local" 
+                  name="local" 
+                  formControlName="local"
+                  value="{{member.groupName.local}}" 
+                  [ngModel]="member.groupName.local">
+                    <mat-option *ngFor="let local of locals" [value]="local.value">
+                      {{ local.viewValue }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+            </div>            
+        </div> 
+  </div>
+  

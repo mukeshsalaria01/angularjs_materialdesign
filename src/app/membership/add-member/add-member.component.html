@@ -1,0 +1,36 @@
+<div fxLayout="column" fxLayoutAlign="space-evenly stretch">
+  <form [formGroup]="addMemberForm" (ngSubmit)="addNewMember(addMemberForm.value)"> 
+  <div fxFlex class="add-member-card" >
+    <mat-card class="mat-elevation-z5">
+        <input formControlName="index" class="user-index" value="" [ngModel]="userId">
+      <mat-card-title><mat-icon>face</mat-icon> Basic Detail </mat-card-title>
+      <app-basic-details [parentForm]="addMemberForm.get('basicDetails')" [memberChild]= "member" ></app-basic-details>
+    </mat-card>
+  </div>
+  <div fxFlex class="add-member-card">
+    <mat-card class="mat-elevation-z5">
+      <mat-card-title><mat-icon>home</mat-icon> Address</mat-card-title>
+      <app-address  [parentForm]="addMemberForm.get('address')" [memberChild]= "member"></app-address>
+    </mat-card>
+  </div>
+  <div fxFlex class="add-member-card">
+    <mat-card class="mat-elevation-z5">
+      <mat-card-title><mat-icon>assessment</mat-icon> GS Details</mat-card-title>
+      <app-gs-details  [parentForm]="addMemberForm.get('gsDetails')" [memberChild]= "member"></app-gs-details>
+    </mat-card>
+  </div>
+  <div fxFlex class="add-member-card">
+    <mat-card class="mat-elevation-z5">
+      <mat-card-title><mat-icon>dashboard</mat-icon> Group Name</mat-card-title>
+      <app-group-name [parentForm]="addMemberForm.get('groupName')" [memberChild]= "member"></app-group-name>
+    </mat-card>
+  </div>
+  <div fxFlex  class="add-member-card">
+    <mat-card class="mat-elevation-z5">
+      <button  color="basic" mat-raised-button (click)="cancel()"><mat-icon>clear</mat-icon> Cancel</button>
+      <button color="primary" mat-raised-button ><mat-icon>save</mat-icon> Save</button>
+    </mat-card>
+  </div>
+</form>
+<!-- <pre>{{addMemberForm.value | json}}</pre> -->
+</div>

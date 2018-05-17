@@ -1,0 +1,79 @@
+<app-header></app-header>
+<div class="container">
+  <div class="content" fxLayout="row" fxLayout.xs="column" >
+    <div fxFlex="50" >
+      <div class="content">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Bar Chart</mat-card-title>
+          </mat-card-header>
+          <div>
+            <div style="display: block">
+              <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend"
+                [chartType]="barChartType" (chartHover)="BarChartHovered($event)" (chartClick)="BarChartClicked($event)"></canvas>
+            </div>
+
+          </div>
+        </mat-card>
+      </div>
+    </div>
+    <div fxFlex="50" >
+      <div class="content">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Doughnut Chart</mat-card-title>
+          </mat-card-header>
+          <div style="display: block">
+            <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType" (chartHover)="doughnutChartHovered($event)"
+              (chartClick)="doughnutChartClicked($event)">
+            </canvas>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+  <div class="content" fxLayout="row" fxLayout.xs="column" >
+      <div fxFlex="50" >
+        <div class="content">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>Radar Chart</mat-card-title>
+            </mat-card-header>
+            
+
+    <div style="display: block">
+      <canvas baseChart
+              [datasets]="radarChartData"
+              [labels]="radarChartLabels"
+              [chartType]="radarChartType"
+              ></canvas>
+    </div>
+
+
+          </mat-card>
+        </div>
+      </div>
+      <div fxFlex="50" >
+        <div class="content">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>Pie Chart</mat-card-title>
+            </mat-card-header>
+           
+
+    <div style="display: block">
+        <canvas baseChart
+                [data]="pieChartData"
+                [labels]="pieChartLabels"
+                [chartType]="pieChartType"></canvas>
+      </div>
+  
+  
+          </mat-card>
+        </div>
+      </div>
+    </div>
+
+</div>
+<app-footer></app-footer>

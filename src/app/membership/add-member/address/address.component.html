@@ -1,0 +1,153 @@
+<div fxLayout="column" fxLayoutAlign="none" [formGroup]="parentForm" *ngFor="let member of memberChild">
+
+  <div fxFlex fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="30px">
+    <div fxFlex>
+      <mat-form-field class="full-width">
+        <textarea matInput placeholder="Address 1 (Apt, House, Streetname, etc.)" 
+        name="address1" 
+        formControlName="address1"
+        value="{{member.address.address1}}" 
+        [ngModel]="member.address.address1" ></textarea>
+      </mat-form-field>
+    </div>
+    <div fxFlex>
+      <mat-form-field class="full-width">
+        <textarea matInput placeholder="Address 2 " 
+        name="address2" 
+        formControlName="address2"
+        value="{{member.address.address2}}" 
+        [ngModel]="member.address.address2"
+        ></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+  <div fxFlex fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between none" fxLayoutGap="30px">
+    <div fxFlex>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="City" 
+        value="{{member.address.city}}" 
+        [ngModel]="member.address.city" 
+         name="city" formControlName="city">
+      </mat-form-field>
+    </div>
+    <div fxFlex>
+      <mat-form-field class="full-width">
+        <mat-select placeholder="Country" name="country"        
+        [ngModel]="member.address.country" 
+        formControlName="country">
+          <mat-option *ngFor="let country of countries" [value]="country.value">
+            {{ country.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div fxFlex>
+      <mat-form-field class="full-width">
+        <mat-select placeholder="Province"       
+        [ngModel]="member.address.province" 
+        name="province" formControlName="province">
+          <mat-option *ngFor="let province of provinces" [value]="province.value">
+            {{ province.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div fxFlex fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between none" fxLayoutGap="30px">
+    <div fxFlex>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Postal" 
+        value="{{member.address.postal}}" 
+        [ngModel]="member.address.postal"
+        name="postal" formControlName="postal">
+      </mat-form-field>
+    </div>
+    <div fxFlex>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Email" 
+        value="{{member.address.email}}" 
+        [ngModel]="member.address.email" 
+        name="email" formControlName="email">
+      </mat-form-field>
+    </div>
+    <div fxFlex>
+      <mat-form-field class="full-width">
+        <input matInput [matDatepicker]="AddressEffective" 
+        value="{{member.address.addressEffectiveSince}}" 
+        [ngModel]="member.address.addressEffectiveSince"
+        placeholder="Address Effective Since"
+        name="addressEffectiveSince" 
+        formControlName="addressEffectiveSince">
+        <mat-datepicker-toggle matSuffix [for]="AddressEffective"></mat-datepicker-toggle>
+        <mat-datepicker #AddressEffective></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+  </div>
+
+  <div fxFlex fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between none" fxLayoutGap="30px">
+    <div fxFlex>
+      <mat-form-field class="full-width">
+        <mat-select placeholder="Region"       
+        [ngModel]="member.address.region" 
+        name="region" formControlName="region">
+          <mat-option *ngFor="let region of regions" [value]="region.value">
+            {{ region.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div fxFlex>
+        <mat-slide-toggle
+        class="address-valid"
+      >Address Valid</mat-slide-toggle>
+        
+    </div>
+    <div fxFlex>
+      <mat-form-field class="full-width">
+        <mat-select placeholder="Branch" 
+              [ngModel]="member.address.branch" 
+        name="branch" formControlName="branch">
+          <mat-option *ngFor="let branch of branches" [value]="branch.value">
+            {{ branch.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div fxFlex fxLayout="column" fxLayout.lt-md="column" fxLayoutAlign="space-between none" fxLayoutGap="30px">
+    <div fxLayout="column" fxLayoutAlign="space-between none">
+      <div fxFlex class="table-container">
+        <mat-card>
+          <div class="mat-table">
+            <div class="mat-header-row" fxLayout="row">
+              <div fxFlex class="mat-header-cell">Type</div>
+              <div fxFlex class="mat-header-cell">Class</div>
+              <div fxFlex class="mat-header-cell">Number</div>
+              <div fxFlex class="mat-header-cell">Action</div>
+            </div>
+            <mat-divider></mat-divider>
+            <div *ngFor="let d of data ; let i = index" class="mat-row" fxLayout="row" [attr.id]="i">
+              <div fxFlex class="mat-cell">{{d.type}}</div>
+              <div fxFlex class="mat-cell">{{d.class}}</div>
+              <div fxFlex class="mat-cell">{{d.number}}</div>
+              <div fxFlex class="mat-cell">
+                <button mat-button (click)="removeNumber(i)">
+                  <mat-icon>remove_circle
+                  </mat-icon> Remove</button>
+              </div>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+      <div fxFlex>
+        <button color="primary" mat-raised-button (click)="openAddNumberDialog()">
+          <mat-icon>add</mat-icon> Add New Number</button>
+      </div>
+      <div>
+
+      </div>
+    </div>
+  </div>
+</div>

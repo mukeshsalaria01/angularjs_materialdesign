@@ -1,0 +1,18 @@
+<app-header></app-header>
+<mat-drawer-container class="sidebar-container" autosize>
+  <mat-drawer #drawer class="sidebar-sidenav md-elevation-z15" mode="side" opened="open">
+    <app-sidebar></app-sidebar>
+  </mat-drawer>
+  <div class="sidebar-sidenav-content">
+    <div fxShow="false" fxShow.xs="true" fxLayout="column" fxLayoutAlign="center center" style="padding-top: 10px">
+      <button type="button" mat-button (click)="drawer.toggle()">
+        Section Menu
+      </button>
+    </div>
+    <div fxLayout="column" style="height: 445px; min-height: 445px;">      
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</mat-drawer-container>
+
+<app-footer></app-footer>

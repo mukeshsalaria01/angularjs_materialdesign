@@ -1,0 +1,37 @@
+<h2 mat-dialog-title><mat-icon>add</mat-icon> Add new number</h2>  
+<mat-dialog-content>
+  
+
+      <mat-form-field  class="full-width">
+          <mat-select placeholder="Type" name="type"  [(ngModel)]="modal.type">
+            <mat-option *ngFor="let classTypes of classesType" [value]="classTypes.value">
+              {{ classTypes.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field  class="full-width">
+            <mat-select placeholder="Class" name="class"  [(ngModel)]="modal.class">
+              <mat-option *ngFor="let class of classes" [value]="class.value">
+                {{ class.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Number"  [(ngModel)]="modal.number" [formControl]="number" required>
+      <mat-error *ngIf="number.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>    
+  
+  
+  
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="save()"> 
+    <mat-icon>save</mat-icon>Save
+  </button>
+  <button mat-button (click)="dismiss()"> 
+    <mat-icon>cancel</mat-icon>Cancle
+  </button>
+</mat-dialog-actions>

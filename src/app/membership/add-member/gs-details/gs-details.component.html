@@ -1,0 +1,44 @@
+<div fxLayout="column" fxLayoutAlign="space-between stretch" [formGroup]="parentForm" *ngFor="let member of memberChild">
+  <div fxFlex fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="30px">
+    <div fxFlex>
+      <section class="is-member-section">
+        <mat-checkbox name="isMember" 
+        formControlName="isMember" 
+        value="{{member.gsDetails.isMember}}" 
+        [ngModel]="member.gsDetails.isMember">Is Member In GS</mat-checkbox>
+      </section>
+    </div>
+    <div fxFlex>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Marker" 
+        name="marker" 
+        formControlName="marker"
+        value="{{member.gsDetails.marker}}" 
+        [ngModel]="member.gsDetails.marker">
+      </mat-form-field>
+    </div>
+    <div fxFlex>
+      <mat-form-field class="full-width">
+        <input matInput [matDatepicker]="gsEffective" 
+        placeholder="GS Effective Date"
+        name="gsEffectiveDate" 
+        formControlName="gsEffectiveDate"
+        value="{{member.gsDetails.gsEffectiveDate}}" 
+        [ngModel]="member.gsDetails.gsEffectiveDate">
+        <mat-datepicker-toggle matSuffix [for]="gsEffective"></mat-datepicker-toggle>
+        <mat-datepicker #gsEffective></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div fxFlex>
+      <mat-form-field class="full-width">
+        <input matInput [matDatepicker]="lastNotInGs" 
+        placeholder="Last Not In GS Date" 
+        name="lastNotInGsDate" 
+        formControlName="lastNotInGsDate"
+        value="{{member.gsDetails.lastNotInGsDate}}" 
+        [ngModel]="member.gsDetails.lastNotInGsDate">
+        <mat-datepicker-toggle matSuffix [for]="lastNotInGs"></mat-datepicker-toggle>
+        <mat-datepicker #lastNotInGs></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </div>

@@ -26,6 +26,8 @@ import { ChartsModule } from 'ng2-charts';
 
 import { DashboardModule } from './dashboard/dashboard.module';
 import { ComparePasswordDirective } from './shared/compare-password.directive';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
@@ -33,7 +35,8 @@ import { ComparePasswordDirective } from './shared/compare-password.directive';
 @NgModule({
   declarations: [
     AppComponent,
-       ComparePasswordDirective
+    ComparePasswordDirective,  
+    NotFoundComponent  
     
   ],
   imports: [
@@ -42,6 +45,7 @@ import { ComparePasswordDirective } from './shared/compare-password.directive';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    FlexLayoutModule,
     AppRoutingModule,
     HeaderModule,
     FooterModule,
@@ -51,7 +55,7 @@ import { ComparePasswordDirective } from './shared/compare-password.directive';
     DataTablesModule,
     ProfileModule,
     ChartsModule,
-    DashboardModule
+    DashboardModule,
 
  
     

@@ -1,4 +1,4 @@
-<div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-around center" >
+<div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-around center">
   <div fxFlex class="login-section" fxLayoutAlign="center center" [ngStyle.lt-lg]="{'padding.px': 30, 'width.%': 100}">
     <div class="container text-center" fxLayout="column wrap">
       <div fxFlex>
@@ -9,22 +9,32 @@
       <div fxFlex fxLayout="column wrap">
         <div fxFlex fxLayout="column" fxLayout.lt-md="column">
           <mat-card>
-              <form [formGroup]="userLogin" novalidate>
+            <form [formGroup]="userLoginForm" novalidate>
               <div fxFlex>
                 <mat-form-field class="full-width">
-                  <input matInput 
-                         placeholder="User Name" 
-                         name="userName"
-                         formControlName="userName">
+                  <input matInput placeholder="User Name" name="userName" formControlName="userName">
+                  <mat-error *ngIf="(userLoginForm.get('userName').invalid && 
+                  (userLoginForm.get('userName').dirty || 
+                  userLoginForm.get('userName').touched || 
+                  isSubmit))">
+                    <span *ngIf="userLoginForm.get('userName').errors?.required">
+                      Please enter username.
+                    </span>
+                  </mat-error>
                 </mat-form-field>
+
               </div>
               <div fxFlex>
                 <mat-form-field class="full-width">
-                  <input matInput 
-                         placeholder="Password" 
-                         name="password" 
-                         type="password"
-                         formControlName="password" >
+                  <input matInput placeholder="Password" name="password" type="password" formControlName="password">
+                  <mat-error *ngIf="(userLoginForm.get('password').invalid && 
+                  (userLoginForm.get('password').dirty || 
+                  userLoginForm.get('password').touched || 
+                  isSubmit))">
+                    <span *ngIf="userLoginForm.get('password').errors?.required">
+                      Please enter password.
+                    </span>
+                  </mat-error>
                 </mat-form-field>
               </div>
               <div fxFlex fxLayoutAlign="center center" fxLayout.lt-md="column">
@@ -37,7 +47,7 @@
                 </p>
               </div>
               <div fxFlex>
-                <button color="primary" mat-raised-button>
+                <button color="primary" mat-raised-button [disabled]="!userLoginForm.valid">
                   <mat-icon>fingerprint</mat-icon> Login</button>
               </div>
 
@@ -55,7 +65,8 @@
     </div>
   </div>
 
-  <div fxFlex class="company-section " [ngStyle.gt-xs]="{'height.vh': 100}" [ngStyle.lt-lg]="{'padding.px': 30, 'width.%': 100}" fxLayoutAlign="center center">
+  <div fxFlex class="company-section " [ngStyle.gt-xs]="{'height.vh': 100}" [ngStyle.lt-lg]="{'padding.px': 30, 'width.%': 100}"
+    fxLayoutAlign="center center">
     <div fxflex class="container text-center">
       <h1> Union Worx </h1>
       <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>

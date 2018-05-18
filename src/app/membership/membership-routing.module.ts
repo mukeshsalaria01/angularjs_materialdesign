@@ -8,7 +8,7 @@ import { ViewMemberComponent } from './view-member/view-member.component';
 const routes: Routes = [
   {path:'', component: MembershipComponent,
   children:[
-    { path:'', component: ViewMemberComponent },
+    { path:'', component: EditMemberComponent },
     {path: 'add-member', component: AddMemberComponent},
     {path: 'edit-members', component: EditMemberComponent},
     {path: 'edit-member/:id', component: AddMemberComponent},

@@ -60,8 +60,8 @@
                                     isSubmit))">
                     <span *ngIf="registerForm.get('password').errors?.required">
                       Please choose a password.
-                    </span>                                    
-                    </mat-error>
+                    </span>
+                  </mat-error>
                 </mat-form-field>
                 <span style="flex:1 1 auto;"></span>
                 <mat-form-field class="full-width">
@@ -69,21 +69,15 @@
                   <mat-error *ngIf="(registerForm.get('rePassword').invalid && 
                                     (registerForm.get('rePassword').dirty || 
                                     registerForm.get('rePassword').touched || 
-                                    isSubmit))">                 
+                                    isSubmit))">
                     <span *ngIf="registerForm.get('rePassword').errors?.required">
                       Please re-enter password.
                     </span>
                     <span *ngIf="registerForm.get('rePassword').errors?.noEqual">
                       Password doesn't match
-                    </span>    
-
-                    </mat-error>
+                    </span>
+                  </mat-error>
                 </mat-form-field>
-
-
-
-                
-
               </div>
               <div fxFlex>
                 <button color="primary" mat-raised-button [disabled]="!registerForm.valid">

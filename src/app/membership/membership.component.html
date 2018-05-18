@@ -1,15 +1,27 @@
-<app-header></app-header>
+<app-header (navToggle)="sidenav.toggle()"></app-header>
 <mat-drawer-container class="sidebar-container" autosize>
-  <mat-drawer #drawer class="sidebar-sidenav md-elevation-z15" mode="side" opened="open">
+  <mat-drawer #sidenav 
+              class="sidebar-sidenav md-elevation-z15"                
+              [mode]="mobileQuery.matches ? 'over' : 'side'"
+              [opened]="mobileQuery.matches ? 'false' : 'true'"
+              >
     <app-sidebar></app-sidebar>
   </mat-drawer>
-  <div class="sidebar-sidenav-content">
-    <div fxShow="false" fxShow.xs="true" fxLayout="column" fxLayoutAlign="center center" style="padding-top: 10px">
-      <button type="button" mat-button (click)="drawer.toggle()">
+  <mat-toolbar color="warm">
+      <div fxShow="true" fxHide.gt-sm="true">
+        <button mat-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+  
+      <span>Union Worx</span>
+      <div fxShow="true" fxShow.xs="false" fxLayout="column" fxLayoutAlign="center center" style="padding-top: 10px">
         Section Menu
-      </button>
-    </div>
-    <div fxLayout="column" style="height: 445px; min-height: 445px;">      
+      </div>
+    </mat-toolbar>
+  <div class="sidebar-sidenav-content">
+     
+    <div fxLayout="column" >      
       <router-outlet></router-outlet>
     </div>
   </div>

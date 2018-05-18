@@ -6,6 +6,8 @@ import { HomeComponent } from './home.component';
 import { MaterialModule } from '../shared/material.module';
 import { HeaderModule } from '../layout/header/header.module';
 import { FooterModule } from '../layout/footer/footer.module';
+import { SidebarModule } from '../layout/sidebar/sidebar.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
@@ -13,7 +15,9 @@ import { FooterModule } from '../layout/footer/footer.module';
     HomeRoutingModule,
     MaterialModule,
     HeaderModule,
-    FooterModule
+    FooterModule,
+    SidebarModule,
+    FlexLayoutModule
   ],
   declarations: [HomeComponent]
 })

@@ -1,36 +1,35 @@
-.company-section{
-    background-image: linear-gradient(0deg,rgba(47, 0, 255, 0.3),rgba(47, 0, 255, 0.3)),url(/assets/images/bg.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-  
-    
-    h1{
-        color: whitesmoke;
-    }
-    p{
-        color: whitesmoke;
-    }
+.company-section {
+  background-image: linear-gradient(0deg, rgba(47, 0, 255, 0.3), rgba(47, 0, 255, 0.3)), url(/assets/images/bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  h1 {
+    color: whitesmoke;
+  }
+  p {
+    color: whitesmoke;
+  }
 }
 
-.container{
-   margin-left: auto;
-   margin-right: auto;
+.container {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.login-section{
-    background: linear-gradient(0deg,rgba(92,107,192 ,1),rgba(92,107,192 ,1));
-   h1,
-   h2,
-   p{
-       color: whitesmoke;
-   }
-   h3{
-       a{
-        color: whitesmoke;
-   }
+.login-section {
+  background: linear-gradient(0deg, rgba(92, 107, 192, 1), rgba(92, 107, 192, 1));
+  h1,
+  h2,
+  p {
+    color: whitesmoke;
+  }
+  h3 {
+    a {
+      color: whitesmoke;
+    }
+  }
 }
-}
-a{
-    text-decoration: none;
-    color: #333333;
+
+a {
+  text-decoration: none;
+  color: #333333;
 }

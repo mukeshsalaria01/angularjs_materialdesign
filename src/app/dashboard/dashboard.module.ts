@@ -5,9 +5,11 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { HeaderModule } from '../layout/header/header.module';
 import { FooterModule } from '../layout/footer/footer.module';
-import { MatCardModule } from '@angular/material';
+import { MatCardModule, MatSidenavModule, MatListModule, MatToolbar, MatIcon, MatToolbarModule, MatIconModule, MatButtonModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ChartsModule } from 'ng2-charts';
+import { ChartsComponent } from './charts/charts.component';
+import { SidebarModule } from '../layout/sidebar/sidebar.module';
 
 @NgModule({
   imports: [
@@ -17,8 +19,14 @@ import { ChartsModule } from 'ng2-charts';
     FooterModule,
     FlexLayoutModule,
     MatCardModule,
-    ChartsModule
+    ChartsModule,
+    MatSidenavModule,
+    MatListModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    SidebarModule
   ],
-  declarations: [DashboardComponent]
+  declarations: [DashboardComponent,ChartsComponent]
 })
 export class DashboardModule { }

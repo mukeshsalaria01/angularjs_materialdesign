@@ -14,9 +14,10 @@ export class AddMemberComponent implements OnInit {
    member: any;
    userId: number;
 
-  constructor(fBuilder: FormBuilder, private newMember: NewMemberService, 
+  constructor(fBuilder: FormBuilder, 
               private router: Router,
-              private activatedRoute: ActivatedRoute
+              private activatedRoute: ActivatedRoute,
+              private memberService: NewMemberService
             ) {
     this.addMemberForm = fBuilder.group({
       'index':  ['', Validators.required],
@@ -75,6 +76,7 @@ export class AddMemberComponent implements OnInit {
 
 
   addNewMember(formdata) {
+    this.memberService.addMember(formdata);
     let arrayObj = [];
     let members = JSON.parse(localStorage.getItem('data'));    
     console.log(members.length);

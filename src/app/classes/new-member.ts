@@ -1,4 +1,4 @@
-export class NewMember {
+export interface NewMember {
   fName: string;
   lName: string;
   mName: string;

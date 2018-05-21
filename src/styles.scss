@@ -37,3 +37,17 @@ img{
     margin-top: 30px;
     margin-bottom: 40px;
 }
+
+/**Breadrumb**/
+
+.breadcrumb{
+    list-style: none;
+    li{
+        display: inline-block;
+        font-size: 13px;
+        a{
+            text-decoration: none;
+            color: #222222;
+        }
+    }
+}

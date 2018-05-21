@@ -97,8 +97,8 @@
               <td>{{member.groupName.organization}}</td>
               <td>{{member.groupName.local}}</td> -->
               <td><div class="button-row">
-                  <button mat-raised-button (click)="edit(members , i)" color="primary">Edit</button>
-                  <button mat-raised-button (click)="delete(members , i)" color="warn">Delete</button>
+                  <button mat-icon-button (click)="edit(members , i)" color="primary"> <mat-icon>edit</mat-icon> </button>
+                  <button mat-icon-button (click)="delete(members , i)" color="warn"><mat-icon>delete_forever</mat-icon></button>
                 </div></td>
               </tr>
             </tbody>

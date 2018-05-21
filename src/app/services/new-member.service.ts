@@ -8,8 +8,8 @@ export class NewMemberService {
   private newMemeber: NewMember ;
   constructor() { }
 
-  public addMember( ): void{
-    let newMember = new NewMember()
+  public addMember(member ): void{
+    localStorage["newData"] = JSON.stringify(member);  
   }
 
   

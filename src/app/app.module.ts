@@ -28,6 +28,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { ComparePasswordDirective } from './shared/compare-password.directive';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { BreadcrumbModule } from './layout/breadcrumb/breadcrumb.module';
 
 
 
@@ -56,7 +57,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ProfileModule,
     ChartsModule,
     DashboardModule,
-
+    BreadcrumbModule
  
     
   ],

@@ -17,9 +17,6 @@ import { MatCardModule,
   MatSidenavModule,             
   MatListModule} from "@angular/material";
 
-
-
-
 @NgModule({
   imports: [
     CommonModule,
@@ -36,6 +33,6 @@ import { MatCardModule,
     HeaderModule,
     FooterModule
   ],
-  declarations: [LayoutComponent,  ]
+  declarations: [LayoutComponent  ]
 })
 export class LayoutModule { }

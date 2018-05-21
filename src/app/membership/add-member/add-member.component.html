@@ -10,7 +10,7 @@
   <div fxFlex class="add-member-card">
     <mat-card class="mat-elevation-z5">
       <mat-card-title><mat-icon>home</mat-icon> Address</mat-card-title>
-      <app-address  [parentForm]="addMemberForm.get('address')" [memberChild]= "member"></app-address>
+      <app-address  [parentForm]="addMemberForm.get('address')" [memberChild]= "member" (numberEvent)="recieveNumber($event)"></app-address>
     </mat-card>
   </div>
   <div fxFlex class="add-member-card">

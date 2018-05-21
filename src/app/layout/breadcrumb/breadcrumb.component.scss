@@ -1,0 +1,11 @@
+.breadcrumb{
+    list-style: none;
+    li{
+        display: inline-block;
+        font-size: 13px;
+        a{
+            text-decoration: none;
+            color: #222222;
+        }
+    }
+}

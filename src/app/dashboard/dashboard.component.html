@@ -10,12 +10,9 @@
       </button>
     </div>
 
-    <span>Union Worx</span>
-    <div fxShow="true" fxShow.xs="false" fxLayout="column" fxLayoutAlign="center center" style="padding-top: 10px">
-      <button type="button" mat-button (click)="sidenav.toggle()">Section Menu</button>
-    </div>
+    
+    <span><app-breadcrumb></app-breadcrumb></span>
   </mat-toolbar>
-
   <router-outlet></router-outlet>
 </mat-drawer-container>
 

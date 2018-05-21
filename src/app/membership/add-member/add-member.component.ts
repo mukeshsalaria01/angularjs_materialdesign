@@ -72,6 +72,8 @@ export class AddMemberComponent implements OnInit {
     this.getMember();
   }
 
+
+
   addNewMember(formdata) {
     let arrayObj = [];
     let members = JSON.parse(localStorage.getItem('data'));    
@@ -83,10 +85,17 @@ export class AddMemberComponent implements OnInit {
     } 
     else {         
          if (members) {
+           formdata.index = members.length+1;
+           formdata.numbers= {
+             'class': 'home',
+             'type': 'home',
+             'number': '889'
+           }
           members.forEach(element => { arrayObj.push(element); });
           localStorage.removeItem("data");
           arrayObj.push(formdata);
           localStorage["data"] = JSON.stringify(arrayObj);    
+          console.log(arrayObj);
         } else {
           localStorage.removeItem("data");
           arrayObj.push(formdata);
@@ -98,15 +107,20 @@ export class AddMemberComponent implements OnInit {
   }
 
   getMember(){
-    let members = JSON.parse(localStorage.getItem('data'));   
+    let members = JSON.parse(localStorage.getItem('data'));  
+    
+    
+
+
+
     this.activatedRoute.params.subscribe((params: Params) => {
       if(params['id'] ){
       this.userId = params['id'];
      this.member = members.splice(this.userId,1);
       }else{
         this.member= [{
-          'basicDetails': {
-        
+          'index': '',
+          'basicDetails': {        
             'fName': "",
             'lName': "",
             'mName': "",

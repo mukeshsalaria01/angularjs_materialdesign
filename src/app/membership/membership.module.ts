@@ -15,7 +15,8 @@ import { MatCardModule,
   MatDividerModule, 
   MatToolbarModule, 
   MatSidenavModule,             
-  MatListModule} from "@angular/material";
+  MatListModule,
+  MatExpansionModule} from "@angular/material";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { AddMemberComponent } from './add-member/add-member.component';
 import { HeaderModule } from '../layout/header/header.module';
@@ -25,6 +26,7 @@ import { HomeModule } from '../home/home.module';
 import { SidebarModule } from '../layout/sidebar/sidebar.module';
 import { ViewMemberModule } from './view-member/view-member.module';
 import { EditMemberModule } from './edit-member/edit-member.module';
+import { BreadcrumbModule } from '../layout/breadcrumb/breadcrumb.module';
 
 
 
@@ -48,7 +50,9 @@ import { EditMemberModule } from './edit-member/edit-member.module';
         HomeModule,
         SidebarModule,
         ViewMemberModule,
-        EditMemberModule
+        EditMemberModule,
+        MatExpansionModule,
+        BreadcrumbModule
        
   ],
   declarations: [MembershipComponent   ]

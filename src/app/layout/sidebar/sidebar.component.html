@@ -1,60 +1,30 @@
- <mat-toolbar color="foreground">
-    <span>
-       Union Worx
-    </span>
-</mat-toolbar>
-<!--<mat-list role="list">
-  <mat-list-item role="listitem">
-    <a mat-button routerLink="/membership/edit-members">
-      <mat-icon>people_outline</mat-icon> Manage Members</a>
-  </mat-list-item>
-  <mat-list-item role="listitem">
-      <a mat-button routerLink="/dashboard/charts">
-        <mat-icon>pie_chart</mat-icon> Charts</a>
-    </mat-list-item> 
-</mat-list> -->
-
-<!-- 
 <mat-toolbar color="foreground">
-    <span>
-      <mat-icon>class</mat-icon> Dashboard</span>
-  </mat-toolbar>
-  <mat-list role="list">
-    <mat-list-item role="listitem">
-    <a mat-button routerLink="/membership/edit-members">
-      <mat-icon>create</mat-icon> Edit Member</a>
-  </mat-list-item>   
-  </mat-list> -->
+  <span>
+    Union Worx
+  </span>
+</mat-toolbar>
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <span>
+          <mat-icon>class</mat-icon> Dashboard</span>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <a mat-button routerLink="/dashboard/charts">
+      <mat-icon>pie_chart</mat-icon> Charts</a>
 
 
-  <mat-accordion>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            <span><mat-icon>class</mat-icon> Dashboard</span>
-          </mat-panel-title>
-          <!-- <mat-panel-description>
-            Type your name and age
-          </mat-panel-description> -->
-        </mat-expansion-panel-header>
-        <a mat-button routerLink="/dashboard/charts">
-          <mat-icon>pie_chart</mat-icon> Charts</a>
-        
-       
-      </mat-expansion-panel>
-      <mat-expansion-panel (opened)="panelOpenState = true"
-                           (closed)="panelOpenState = false">
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-              <span><mat-icon>people_outline</mat-icon> Membership</span>
-          </mat-panel-title>
-          <!-- <mat-panel-description>
-            Currently I am {{panelOpenState ? 'open' : 'closed'}}
-          </mat-panel-description> -->
-        </mat-expansion-panel-header>
-        <a mat-button routerLink="/membership/edit-members">
-          <mat-icon>people_outline</mat-icon> Manage Members</a>          
+  </mat-expansion-panel>
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <span>
+          <mat-icon>people_outline</mat-icon> Membership</span>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <a mat-button routerLink="/membership">
+      <mat-icon>people_outline</mat-icon> Manage Members</a>
 
-      </mat-expansion-panel>
-    </mat-accordion>
-    
+  </mat-expansion-panel>
+</mat-accordion>

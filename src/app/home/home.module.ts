@@ -8,6 +8,7 @@ import { HeaderModule } from '../layout/header/header.module';
 import { FooterModule } from '../layout/footer/footer.module';
 import { SidebarModule } from '../layout/sidebar/sidebar.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { BreadcrumbModule } from '../layout/breadcrumb/breadcrumb.module';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HeaderModule,
     FooterModule,
     SidebarModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    BreadcrumbModule
   ],
   declarations: [HomeComponent]
 })

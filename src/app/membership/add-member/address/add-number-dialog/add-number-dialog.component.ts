@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
-import {FormControl, Validators} from '@angular/forms';
+import {FormControl, Validators, FormBuilder, FormGroup} from '@angular/forms';
 
 export class  ModalComponentModel {
   number:string; 
@@ -16,7 +16,6 @@ export class  ModalComponentModel {
 export class AddNumberDialogComponent implements OnInit {
 
   modal:ModalComponentModel;
-
   classes=[
     {value: 'primary', viewValue: 'Primary'},
     {value: 'secondary', viewValue: 'Secondary '},
@@ -29,12 +28,23 @@ export class AddNumberDialogComponent implements OnInit {
    
   ];
 
-  constructor(private dialogRef : MatDialogRef<AddNumberDialogComponent>) { }
+  addNemberForm: FormGroup;
+  constructor(private dialogRef : MatDialogRef<AddNumberDialogComponent>,
+              private fBuilder: FormBuilder) { 
+                this.addNemberForm= fBuilder.group({
+                    'type': ['', Validators.required],
+                    'class': ['', Validators.required],
+                    'number': ['', Validators.required],
+                })
+  }
 
   ngOnInit() {
     this.modal = new ModalComponentModel;
   }
-  save(){
+  save(number){
+    
+    
+    console.log(number)
     this.dialogRef.close(this.modal);
   }
 

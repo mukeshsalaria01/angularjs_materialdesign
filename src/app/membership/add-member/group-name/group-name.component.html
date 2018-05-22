@@ -23,6 +23,14 @@
                   [ngModel]="member.groupName.membershipEffectiveSince">
                   <mat-datepicker-toggle matSuffix [for]="memberSince"></mat-datepicker-toggle>
                   <mat-datepicker #memberSince></mat-datepicker>
+                  <mat-error *ngIf="(parentForm.get('membershipEffectiveSince').invalid && 
+                  (parentForm.get('membershipEffectiveSince').dirty || 
+                  parentForm.get('membershipEffectiveSince').touched || 
+                  isSubmit))">
+                    <span *ngIf="parentForm.get('membershipEffectiveSince').errors?.required">
+                      Please enter date.
+                    </span>
+                  </mat-error>
                 </mat-form-field>
           </div>
           <div fxFlex>
@@ -36,6 +44,14 @@
                       {{ class.viewValue }}
                     </mat-option>
                   </mat-select>
+                  <mat-error *ngIf="(parentForm.get('class').invalid && 
+                  (parentForm.get('class').dirty || 
+                  parentForm.get('class').touched || 
+                  isSubmit))">
+                    <span *ngIf="parentForm.get('class').errors?.required">
+                      Please select class.
+                    </span>
+                  </mat-error>
                 </mat-form-field>
           </div>
          
@@ -52,6 +68,15 @@
                         {{ classTypes.viewValue }}
                       </mat-option>
                     </mat-select>
+
+                    <mat-error *ngIf="(parentForm.get('classType').invalid && 
+                  (parentForm.get('classType').dirty || 
+                  parentForm.get('classType').touched || 
+                  isSubmit))">
+                    <span *ngIf="parentForm.get('classType').errors?.required">
+                      Please select class type.
+                    </span>
+                  </mat-error>
                   </mat-form-field>
             </div>
           <div fxFlex>
@@ -65,6 +90,14 @@
                       {{ classEffective.viewValue }}
                     </mat-option>
                   </mat-select>
+                  <mat-error *ngIf="(parentForm.get('classEffective').invalid && 
+                  (parentForm.get('classEffective').dirty || 
+                  parentForm.get('classEffective').touched || 
+                  isSubmit))">
+                    <span *ngIf="parentForm.get('classEffective').errors?.required">
+                      Please select class Effective.
+                    </span>
+                  </mat-error>
                 </mat-form-field>
           </div>
   
@@ -79,6 +112,14 @@
                       {{ classLevel.viewValue }}
                     </mat-option>
                   </mat-select>
+                  <mat-error *ngIf="(parentForm.get('classLevel').invalid && 
+                  (parentForm.get('classLevel').dirty || 
+                  parentForm.get('classLevel').touched || 
+                  isSubmit))">
+                    <span *ngIf="parentForm.get('classLevel').errors?.required">
+                      Please select class level.
+                    </span>
+                  </mat-error>
                 </mat-form-field>
             </div>            
         </div> 
@@ -92,6 +133,14 @@
                   value="{{member.groupName.rsapNumber}}" 
                   [ngModel]="member.groupName.rsapNumber">
                 </mat-form-field>
+                <mat-error *ngIf="(parentForm.get('rsapNumber').invalid && 
+                  (parentForm.get('rsapNumber').dirty || 
+                  parentForm.get('rsapNumber').touched || 
+                  isSubmit))">
+                    <span *ngIf="parentForm.get('rsapNumber').errors?.required">
+                      Please enter rsap number.
+                    </span>
+                  </mat-error>
               </div>
          
               <div fxFlex>
@@ -105,6 +154,14 @@
                       {{ rsapStatus.viewValue }}
                     </mat-option>
                   </mat-select>
+                  <mat-error *ngIf="(parentForm.get('rsapStatus').invalid && 
+                  (parentForm.get('rsapStatus').dirty || 
+                  parentForm.get('rsapStatus').touched || 
+                  isSubmit))">
+                    <span *ngIf="parentForm.get('rsapStatus').errors?.required">
+                      Please select rsap Status.
+                    </span>
+                  </mat-error>
                 </mat-form-field>
           </div>
          
@@ -118,6 +175,14 @@
                   [ngModel]="member.groupName.rstatusEffective">
                   <mat-datepicker-toggle matSuffix [for]="rstatusEffective"></mat-datepicker-toggle>
                   <mat-datepicker #rstatusEffective></mat-datepicker>
+                  <mat-error *ngIf="(parentForm.get('rstatusEffective').invalid && 
+                  (parentForm.get('rstatusEffective').dirty || 
+                  parentForm.get('rstatusEffective').touched || 
+                  isSubmit))">
+                    <span *ngIf="parentForm.get('rstatusEffective').errors?.required">
+                      Please select rsap status efective date.
+                    </span>
+                  </mat-error>
                 </mat-form-field>
           </div>
 
@@ -135,6 +200,14 @@
                         {{ availability.viewValue }}
                       </mat-option>
                     </mat-select>
+                    <mat-error *ngIf="(parentForm.get('availabilty').invalid && 
+                  (parentForm.get('availabilty').dirty || 
+                  parentForm.get('availabilty').touched || 
+                  isSubmit))">
+                    <span *ngIf="parentForm.get('availabilty').errors?.required">
+                      Please select availabilty.
+                    </span>
+                  </mat-error>
                   </mat-form-field>
             </div>
           <div fxFlex>
@@ -148,6 +221,14 @@
                       {{ organization.viewValue }}
                     </mat-option>
                   </mat-select>
+                  <mat-error *ngIf="(parentForm.get('organization').invalid && 
+                  (parentForm.get('organization').dirty || 
+                  parentForm.get('organization').touched || 
+                  isSubmit))">
+                    <span *ngIf="parentForm.get('organization').errors?.required">
+                      Please select organization.
+                    </span>
+                  </mat-error>
                 </mat-form-field>
           </div>
   
@@ -162,6 +243,14 @@
                       {{ local.viewValue }}
                     </mat-option>
                   </mat-select>
+                  <mat-error *ngIf="(parentForm.get('local').invalid && 
+                  (parentForm.get('local').dirty || 
+                  parentForm.get('local').touched || 
+                  isSubmit))">
+                    <span *ngIf="parentForm.get('local').errors?.required">
+                      Please select local.
+                    </span>
+                  </mat-error>
                 </mat-form-field>
             </div>            
         </div> 

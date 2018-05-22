@@ -9,6 +9,7 @@ import { FooterModule } from '../layout/footer/footer.module';
 import { SidebarModule } from '../layout/sidebar/sidebar.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BreadcrumbModule } from '../layout/breadcrumb/breadcrumb.module';
+import { IndexComponent } from './index/index.component';
 
 @NgModule({
   imports: [
@@ -21,6 +22,6 @@ import { BreadcrumbModule } from '../layout/breadcrumb/breadcrumb.module';
     FlexLayoutModule,
     BreadcrumbModule
   ],
-  declarations: [HomeComponent]
+  declarations: [HomeComponent, IndexComponent]
 })
 export class HomeModule { }

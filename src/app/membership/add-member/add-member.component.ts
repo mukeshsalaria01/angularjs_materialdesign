@@ -71,12 +71,13 @@ export class AddMemberComponent implements OnInit {
   
   ngOnInit() { 
     this.getMember();
+    console.log(this.memberService.getMember());
   }
 
 
 
   addNewMember(formdata) {
-    this.memberService.addMember(formdata);
+    //this.memberService.addMember(formdata);
     let arrayObj = [];
     let members = JSON.parse(localStorage.getItem('data'));    
     console.log(members.length);

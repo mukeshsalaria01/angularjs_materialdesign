@@ -12,6 +12,10 @@ export class NewMemberService {
     localStorage["newData"] = JSON.stringify(member);  
   }
 
+  public getMember(){
+    let members = JSON.parse(localStorage.getItem('data'));    
+    return members
+  }
   
 
 }

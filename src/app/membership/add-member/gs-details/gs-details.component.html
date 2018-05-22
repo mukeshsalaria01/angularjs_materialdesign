@@ -15,6 +15,14 @@
         formControlName="marker"
         value="{{member.gsDetails.marker}}" 
         [ngModel]="member.gsDetails.marker">
+        <mat-error *ngIf="(parentForm.get('marker').invalid && 
+                  (parentForm.get('marker').dirty || 
+                  parentForm.get('marker').touched || 
+                  isSubmit))">
+                    <span *ngIf="parentForm.get('marker').errors?.required">
+                      Please enter marker.
+                    </span>
+                  </mat-error>
       </mat-form-field>
     </div>
     <div fxFlex>
@@ -27,6 +35,14 @@
         [ngModel]="member.gsDetails.gsEffectiveDate">
         <mat-datepicker-toggle matSuffix [for]="gsEffective"></mat-datepicker-toggle>
         <mat-datepicker #gsEffective></mat-datepicker>
+        <mat-error *ngIf="(parentForm.get('gsEffectiveDate').invalid && 
+                  (parentForm.get('gsEffectiveDate').dirty || 
+                  parentForm.get('gsEffectiveDate').touched || 
+                  isSubmit))">
+                    <span *ngIf="parentForm.get('gsEffectiveDate').errors?.required">
+                      Please enter gs effective date.
+                    </span>
+                  </mat-error>
       </mat-form-field>
     </div>
     <div fxFlex>
@@ -39,6 +55,14 @@
         [ngModel]="member.gsDetails.lastNotInGsDate">
         <mat-datepicker-toggle matSuffix [for]="lastNotInGs"></mat-datepicker-toggle>
         <mat-datepicker #lastNotInGs></mat-datepicker>
+        <mat-error *ngIf="(parentForm.get('lastNotInGsDate').invalid && 
+        (parentForm.get('lastNotInGsDate').dirty || 
+        parentForm.get('lastNotInGsDate').touched || 
+        isSubmit))">
+          <span *ngIf="parentForm.get('lastNotInGsDate').errors?.required">
+            Please enter last not in gs date.
+          </span>
+        </mat-error>
       </mat-form-field>
     </div>
   </div>

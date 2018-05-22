@@ -18,6 +18,14 @@
       <div fxFlex="1 1 33%">
         <mat-form-field class="full-width">
           <input matInput placeholder="First Name" value="{{member.basicDetails.fName}}" [ngModel]="member.basicDetails.fName" name="fName" formControlName="fName" >
+          <mat-error *ngIf="(parentForm.get('fName').invalid && 
+                  (parentForm.get('fName').dirty || 
+                  parentForm.get('fName').touched || 
+                  isSubmit))">
+                    <span *ngIf="parentForm.get('fName').errors?.required">
+                      Please enter username.
+                    </span>
+                  </mat-error>
         </mat-form-field>
 
         
@@ -25,11 +33,28 @@
       <div fxFlex="1 1 33%">
         <mat-form-field class="full-width">
           <input matInput placeholder="Middle Name" value="{{member.basicDetails.mName}}"  [ngModel]="member.basicDetails.mName" name="mName" formControlName="mName">
+          <mat-error *ngIf="(parentForm.get('mName').invalid && 
+          (parentForm.get('mName').dirty || 
+          parentForm.get('mName').touched || 
+          isSubmit))">
+            <span *ngIf="parentForm.get('mName').errors?.required">
+              Please enter middle name.
+            </span>
+          </mat-error>
+        
         </mat-form-field>
       </div>
       <div fxFlex="1 1 33%">
         <mat-form-field class="full-width">
           <input matInput placeholder="Last Name" value="{{member.basicDetails.lName}}"  [ngModel]="member.basicDetails.lName" name="lName"  formControlName="lName">
+          <mat-error *ngIf="(parentForm.get('lName').invalid && 
+          (parentForm.get('lName').dirty || 
+          parentForm.get('lName').touched || 
+          isSubmit))">
+            <span *ngIf="parentForm.get('lName').errors?.required">
+              Please enter lastname.
+            </span>
+          </mat-error>
         </mat-form-field>
       </div>
 
@@ -38,6 +63,15 @@
       <div fxFlex>
         <mat-form-field class="full-width">
           <input matInput placeholder="Nick Name" value="{{member.basicDetails.nName}}" [ngModel]="member.basicDetails.nName" name="nName" formControlName="nName" >
+        
+          <mat-error *ngIf="(parentForm.get('nName').invalid && 
+          (parentForm.get('nName').dirty || 
+          parentForm.get('nName').touched || 
+          isSubmit))">
+            <span *ngIf="parentForm.get('nName').errors?.required">
+              Please enter nick name.
+            </span>
+          </mat-error>
         </mat-form-field>
       </div>
 
@@ -53,6 +87,14 @@
               {{ gndr.viewValue }}
             </mat-option>
           </mat-select>
+          <mat-error *ngIf="(parentForm.get('gender').invalid && 
+          (parentForm.get('gender').dirty || 
+          parentForm.get('gender').touched || 
+          isSubmit))">
+            <span *ngIf="parentForm.get('gender').errors?.required">
+              Please select gender.
+            </span>
+          </mat-error>
         </mat-form-field>
       </div>
     </div>
@@ -62,16 +104,41 @@
           <input matInput [matDatepicker]="dob" placeholder="Date of birth" name="dob" formControlName="dob"  value="{{member.basicDetails.dob}}" [ngModel]="member.basicDetails.dob">
           <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
           <mat-datepicker #dob></mat-datepicker>
+          <mat-error *ngIf="(parentForm.get('dob').invalid && 
+          (parentForm.get('dob').dirty || 
+          parentForm.get('dob').touched || 
+          isSubmit))">
+            <span *ngIf="parentForm.get('gender').errors?.required">
+              Please enter dob.
+            </span>
+          </mat-error>
         </mat-form-field>
       </div>
       <div fxFlex>
         <mat-form-field class="full-width">
           <input matInput placeholder="Membership #" value="{{member.basicDetails.membershipNumber}}" [ngModel]="member.basicDetails.membershipNumber" name="membershipNumber" formControlName="membershipNumber">
+          <mat-error *ngIf="(parentForm.get('membershipNumber').invalid && 
+          (parentForm.get('membershipNumber').dirty || 
+          parentForm.get('membershipNumber').touched || 
+          isSubmit))">
+            <span *ngIf="parentForm.get('membershipNumber').errors?.required">
+              Please enter membership number.
+            </span>
+          </mat-error>
         </mat-form-field>
       </div>
       <div fxFlex>
         <mat-form-field class="full-width">
           <input matInput placeholder="Sin #" value="{{member.basicDetails.sinNumber}}" [ngModel]="member.basicDetails.sinNumber" name="sinNumber" formControlName="sinNumber">
+        
+          <mat-error *ngIf="(parentForm.get('sinNumber').invalid && 
+          (parentForm.get('sinNumber').dirty || 
+          parentForm.get('sinNumber').touched || 
+          isSubmit))">
+            <span *ngIf="parentForm.get('sinNumber').errors?.required">
+              Please enter sin number.
+            </span>
+          </mat-error>
         </mat-form-field>
       </div>
     </div>

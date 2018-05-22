@@ -8,6 +8,14 @@
         formControlName="address1"
         value="{{member.address.address1}}" 
         [ngModel]="member.address.address1" ></textarea>
+        <mat-error *ngIf="(parentForm.get('address1').invalid && 
+        (parentForm.get('address1').dirty || 
+        parentForm.get('address1').touched || 
+        isSubmit))">
+          <span *ngIf="parentForm.get('address1').errors?.required">
+            Please enter address 1.
+          </span>
+        </mat-error>
       </mat-form-field>
     </div>
     <div fxFlex>
@@ -18,6 +26,14 @@
         value="{{member.address.address2}}" 
         [ngModel]="member.address.address2"
         ></textarea>
+        <mat-error *ngIf="(parentForm.get('address2').invalid && 
+        (parentForm.get('address2').dirty || 
+        parentForm.get('address2').touched || 
+        isSubmit))">
+          <span *ngIf="parentForm.get('address2').errors?.required">
+            Please enter address 2.
+          </span>
+        </mat-error>
       </mat-form-field>
     </div>
   </div>
@@ -28,6 +44,14 @@
         value="{{member.address.city}}" 
         [ngModel]="member.address.city" 
          name="city" formControlName="city">
+         <mat-error *ngIf="(parentForm.get('city').invalid && 
+         (parentForm.get('city').dirty || 
+         parentForm.get('city').touched || 
+         isSubmit))">
+           <span *ngIf="parentForm.get('city').errors?.required">
+             Please enter city.
+           </span>
+         </mat-error>
       </mat-form-field>
     </div>
     <div fxFlex>
@@ -39,6 +63,14 @@
             {{ country.viewValue }}
           </mat-option>
         </mat-select>
+        <mat-error *ngIf="(parentForm.get('country').invalid && 
+        (parentForm.get('country').dirty || 
+        parentForm.get('country').touched || 
+        isSubmit))">
+          <span *ngIf="parentForm.get('country').errors?.required">
+            Please select country.
+          </span>
+        </mat-error>
       </mat-form-field>
     </div>
     <div fxFlex>
@@ -50,6 +82,14 @@
             {{ province.viewValue }}
           </mat-option>
         </mat-select>
+        <mat-error *ngIf="(parentForm.get('province').invalid && 
+        (parentForm.get('province').dirty || 
+        parentForm.get('province').touched || 
+        isSubmit))">
+          <span *ngIf="parentForm.get('province').errors?.required">
+            Please select province.
+          </span>
+        </mat-error>
       </mat-form-field>
     </div>
   </div>
@@ -61,6 +101,14 @@
         value="{{member.address.postal}}" 
         [ngModel]="member.address.postal"
         name="postal" formControlName="postal">
+        <mat-error *ngIf="(parentForm.get('postal').invalid && 
+        (parentForm.get('postal').dirty || 
+        parentForm.get('postal').touched || 
+        isSubmit))">
+          <span *ngIf="parentForm.get('postal').errors?.required">
+            Please select postal.
+          </span>
+        </mat-error>
       </mat-form-field>
     </div>
     <div fxFlex>
@@ -69,6 +117,14 @@
         value="{{member.address.email}}" 
         [ngModel]="member.address.email" 
         name="email" formControlName="email">
+        <mat-error *ngIf="(parentForm.get('email').invalid && 
+        (parentForm.get('email').dirty || 
+        parentForm.get('email').touched || 
+        isSubmit))">
+          <span *ngIf="parentForm.get('email').errors?.required">
+            Please select email.
+          </span>
+        </mat-error>
       </mat-form-field>
     </div>
     <div fxFlex>
@@ -81,6 +137,14 @@
         formControlName="addressEffectiveSince">
         <mat-datepicker-toggle matSuffix [for]="AddressEffective"></mat-datepicker-toggle>
         <mat-datepicker #AddressEffective></mat-datepicker>
+        <mat-error *ngIf="(parentForm.get('addressEffectiveSince').invalid && 
+        (parentForm.get('addressEffectiveSince').dirty || 
+        parentForm.get('addressEffectiveSince').touched || 
+        isSubmit))">
+          <span *ngIf="parentForm.get('addressEffectiveSince').errors?.required">
+            Please enter address effective since.
+          </span>
+        </mat-error>
       </mat-form-field>
     </div>
 
@@ -96,6 +160,14 @@
             {{ region.viewValue }}
           </mat-option>
         </mat-select>
+        <mat-error *ngIf="(parentForm.get('region').invalid && 
+        (parentForm.get('region').dirty || 
+        parentForm.get('region').touched || 
+        isSubmit))">
+          <span *ngIf="parentForm.get('region').errors?.required">
+            Please enter region.
+          </span>
+        </mat-error>
       </mat-form-field>
     </div>
     <div fxFlex>
@@ -113,6 +185,14 @@
             {{ branch.viewValue }}
           </mat-option>
         </mat-select>
+        <mat-error *ngIf="(parentForm.get('branch').invalid && 
+        (parentForm.get('region').branch || 
+        parentForm.get('region').branch || 
+        isSubmit))">
+          <span *ngIf="parentForm.get('branch').errors?.required">
+            Please select branch.
+          </span>
+        </mat-error>
       </mat-form-field>
     </div>
   </div>

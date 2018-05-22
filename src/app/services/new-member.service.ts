@@ -16,6 +16,10 @@ export class NewMemberService {
     let members = JSON.parse(localStorage.getItem('data'));    
     return members
   }
+
+  public deleteMember(members){
+    localStorage["data"] = JSON.stringify(members);
+  }
   
 
 }

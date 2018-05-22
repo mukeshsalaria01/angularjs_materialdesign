@@ -29,6 +29,8 @@ import { ComparePasswordDirective } from './shared/compare-password.directive';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BreadcrumbModule } from './layout/breadcrumb/breadcrumb.module';
+import { ConfirmBoxComponent } from './layout/confirm-box/confirm-box.component';
+import { ConfirmBoxModule } from './layout/confirm-box/confirm-box.module';
 
 
 
@@ -37,7 +39,8 @@ import { BreadcrumbModule } from './layout/breadcrumb/breadcrumb.module';
   declarations: [
     AppComponent,
     ComparePasswordDirective,  
-    NotFoundComponent  
+    NotFoundComponent ,
+    
     
   ],
   imports: [
@@ -57,11 +60,13 @@ import { BreadcrumbModule } from './layout/breadcrumb/breadcrumb.module';
     ProfileModule,
     ChartsModule,
     DashboardModule,
-    BreadcrumbModule
+    BreadcrumbModule,
+    ConfirmBoxModule
  
     
   ],
   providers: [NewMemberService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ConfirmBoxComponent]
 })
 export class AppModule { }

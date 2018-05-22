@@ -31,8 +31,8 @@ import { MatCardModule,
     MatToolbarModule,
     MatListModule,
     HeaderModule,
-    FooterModule
+    FooterModule,
   ],
-  declarations: [LayoutComponent  ]
+  declarations: [LayoutComponent,   ]
 })
 export class LayoutModule { }

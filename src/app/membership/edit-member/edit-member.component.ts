@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import {Router} from "@angular/router";
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogModule} from '@angular/material';
+//import { LayoutModule } from '../../layout/layout.module';
+import { ConfirmBoxComponent } from '../../layout/confirm-box/confirm-box.component';
 
 @Component({
   selector: 'app-edit-member',
@@ -9,18 +12,21 @@ import {Router} from "@angular/router";
 })
 export class EditMemberComponent implements OnInit {
 
-  dtOptions: DataTables.Settings = {};
+  dtOptions: any = {};
   dtTrigger: Subject<any> = new Subject();
   members: any = [];
   member:any = [];
-  constructor(private router: Router) { }
+  constructor(private router: Router, 
+              private dailog: MatDialog, ) { }
 
   ngOnInit() {
     this.dtOptions = {
       pagingType: 'full_numbers',
       pageLength: 5,
+      responsive: true,
+   
     };
-    //responsive: true
+   
     if (localStorage.getItem('data')) {
       this.members = JSON.parse(localStorage.getItem('data'));
       this.dtTrigger.next();
@@ -38,11 +44,19 @@ export class EditMemberComponent implements OnInit {
    
 
   delete(members ,i) {    
-    alert('Are you sure, You want to delete this record?')   
-    if (i > -1) {
-      members.splice(i, 1);
-    }
+   
+    let dialogRef = this.dailog.open(ConfirmBoxComponent, {
+      width: '450px',
+      data: { name: 'User' }
+    });
+    dialogRef.afterClosed().subscribe(result =>{    
+      if(result)
+       if (i > -1) 
+      members.splice(i, 1);    
       localStorage["data"] = JSON.stringify(members);
+    })
+
+
       
   }
 

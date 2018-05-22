@@ -1,0 +1,14 @@
+<h2 mat-dialog-title><mat-icon>delete</mat-icon> Delete {{data.name}}</h2>  
+
+<mat-dialog-content>
+      <p>Do you want to delete user?</p>   
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button type="button" mat-button (click)="confirmDelete()"> 
+    <mat-icon>remove_circle</mat-icon> Delete
+  </button>
+  <button type="button" mat-button (click)="dismiss()"> 
+    <mat-icon>cancel</mat-icon>Cancel
+  </button>
+</mat-dialog-actions>

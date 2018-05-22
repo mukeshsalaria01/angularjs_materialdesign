@@ -24,6 +24,8 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
+    "@ngrx/core": "^1.2.0",
+    "@ngrx/store": "^2.2.3",
     "angular-datatables": "^5.0.0",
     "angular-local-storage": "^0.7.1",
     "chart.js": "^2.7.2",

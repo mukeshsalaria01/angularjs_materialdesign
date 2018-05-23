@@ -1,53 +1,77 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 // @import '~@angular/material/theming';
-
-body{
-    margin: 0;
+body {
+  margin: 0;
 }
 
-.full-width
-{
-    width: 100%;
+.full-width {
+  width: 100%;
 }
 
-.text-center{
-    text-align: center;
-}
-.container{
-    margin-left: auto;
-    margin-right: auto;
+.text-center {
+  text-align: center;
 }
 
-.content{
-    padding: 10px;
+.container {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-img{
-    width: 100%;
+.content {
+  padding: 10px;
 }
 
-.mat-row{
-    padding-top: 30px;
+img {
+  width: 100%;
 }
-.mat-header-row{
-    padding-bottom: 15px;
+
+.mat-row {
+  padding-top: 30px;
 }
-.table-container{
-    margin-top: 30px;
-    margin-bottom: 40px;
+
+.mat-header-row {
+  padding-bottom: 15px;
+}
+
+.table-container {
+  margin-top: 30px;
+  margin-bottom: 40px;
 }
 
 /**Breadrumb**/
 
-.breadcrumb{
-    list-style: none;
-    li{
-        display: inline-block;
-        font-size: 13px;
-        a{
-            text-decoration: none;
-            color: #222222;
-        }
+.breadcrumb {
+  list-style: none;
+  li {
+    display: inline-block;
+    font-size: 13px;
+    a {
+      text-decoration: none;
+      color: #222222;
     }
+  }
+}
+
+/**blockquote*/
+
+blockquote {
+  border: 1px solid #673ab7;
+  border-left: 10px solid #673ab7;
+  border-radius: 0px;
+  background: #fafafa;
+  font-size: 18px;
+  margin: 10px;
+  padding: 10px 20px;
+  p {
+    margin: 0;
+    line-height: 30px;
+    padding-bottom: 20px;
+  }  
+ footer {
+    display: block;
+    font-size: 80%;
+    text-align: right;
+  }
 }

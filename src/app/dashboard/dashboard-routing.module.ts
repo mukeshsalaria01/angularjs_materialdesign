@@ -11,6 +11,7 @@ import {
 import {
   ChartsComponent
 } from './charts/charts.component';
+import { TablesComponent } from './tables/tables.component';
 
 const routes: Routes = [{
   path: '',
@@ -30,6 +31,13 @@ const routes: Routes = [{
       component: ChartsComponent,
       data: {
         breadcrumb: "Charts"
+      }
+    },
+    {
+      path: 'data-table',
+      component: TablesComponent,
+      data: {
+        breadcrumb: "Data Tables"
       }
     }
   ]

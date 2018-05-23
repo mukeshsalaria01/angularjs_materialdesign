@@ -14,7 +14,7 @@ import { FooterModule } from './layout/footer/footer.module';
 
 import { CdkTableModule } from '@angular/cdk/table';
 import { DataSource } from '@angular/cdk/table';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { MatTableDataSource } from "@angular/material";
 import { NewMemberService } from './services/new-member.service';
 

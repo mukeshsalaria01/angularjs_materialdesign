@@ -12,7 +12,7 @@ export class  ConfirmComponentModel {
   styleUrls: ['./confirm-box.component.scss']
 })
 export class ConfirmBoxComponent implements OnInit {
-  name: string;
+  
   modal:ConfirmComponentModel;
   constructor(public dialogRef : MatDialogRef<ConfirmBoxComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {

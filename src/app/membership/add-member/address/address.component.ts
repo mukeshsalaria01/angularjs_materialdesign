@@ -3,10 +3,10 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { AddNumberDialogComponent } from './add-number-dialog/add-number-dialog.component';
 import { CdkTableModule } from '@angular/cdk/table';
 import { DataSource } from '@angular/cdk/table';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { MatTableDataSource } from "@angular/material";
 
-import 'rxjs/add/observable/of';
+
 import { FormGroup } from '@angular/forms';
 
 @Component({

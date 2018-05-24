@@ -4,8 +4,11 @@
       <div class="content">
         <mat-card>
           <mat-card-header>
-            <mat-card-title>Material Table</mat-card-title>
+            <mat-card-title>
+              <h2>Material Table </h2>
+            </mat-card-title>
           </mat-card-header>
+          <mat-card-content>
           <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
             <!-- Position Column -->
@@ -35,6 +38,7 @@
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
           </table>
+          </mat-card-content>
         </mat-card>
 
       </div>
@@ -43,8 +47,11 @@
       <div class="content">
         <mat-card>
           <mat-card-header>
-            <mat-card-title>Data Table</mat-card-title>
-          </mat-card-header>
+      <mat-card-title>
+        <h2>Data Table </h2>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
           <div class="table-responsive">
             <table datatable [dtOptions]="dtOptions" class="row-border hover">
               <thead>
@@ -69,6 +76,7 @@
               </tbody>
             </table>
           </div>
+          </mat-card-content>
         </mat-card>
 
       </div>
@@ -85,8 +93,11 @@
 
         <mat-card>
           <mat-card-header>
-            <mat-card-title>Material Table With Pagination</mat-card-title>
+            <mat-card-title>
+              <h2>Material table with pagination </h2>
+            </mat-card-title>
           </mat-card-header>
+          <mat-card-content>
           <div class="mat-elevation-z8">
             <table mat-table [dataSource]="dataSourcePagination">
 
@@ -120,6 +131,7 @@
 
             <mat-paginator [pageSizeOptions]="[5, 10]" showFirstLastButtons></mat-paginator>
           </div>
+          </mat-card-content>
         </mat-card>
       </div>
     </div>
@@ -127,8 +139,11 @@
       <div class="content">
         <mat-card>
           <mat-card-header>
-            <mat-card-title>Typography</mat-card-title>
+            <mat-card-title>
+              <h2>Typography  </h2>
+            </mat-card-title>
           </mat-card-header>
+          <mat-card-content>
           <h6>Heading h6</h6>
           <h5>Heading h5</h5>
           <h4>Heading h5</h4>
@@ -146,6 +161,7 @@
 
           Superscript <sup>script</sup>
           Subscript <sub>script</sub>
+          </mat-card-content>
         </mat-card>
       </div>
     </div>

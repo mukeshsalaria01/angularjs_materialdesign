@@ -46,7 +46,14 @@ const routes: Routes = [{
     data: {
       breadcrumb: "Dashboard"
     }
-  },
+  },  
+  {
+    path: 'component',
+    loadChildren: './material-components/material-components.module#MaterialComponentsModule',
+    data: {
+      breadcrumb: "Dashboard"
+    }
+  }, 
   {
     path: 'membership',
     loadChildren: './membership/membership.module#MembershipModule',

@@ -1,0 +1,72 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+          <h2>Slider </h2>
+        </mat-card-title>
+      </mat-card-header>
+    <mat-card-content>
+  
+      <section fxLayout="row" fxLayout.lt-md="column"  fxLayoutAlign="space-around center"  >
+        <div fxflex>
+        <mat-form-field class="slider-margin">
+          <input matInput type="number" placeholder="Value" [(ngModel)]="value">
+        </mat-form-field>
+        <mat-form-field class="slider-margin">
+          <input matInput type="number" placeholder="Min value" [(ngModel)]="min">
+        </mat-form-field>
+      </div>
+      <div fxflex>
+        <mat-form-field class="slider-margin">
+          <input matInput type="number" placeholder="Max value" [(ngModel)]="max">
+        </mat-form-field>
+        <mat-form-field class="slider-margin">
+          <input matInput type="number" placeholder="Step size" [(ngModel)]="step">
+        </mat-form-field>
+      </div>
+      </section>
+  
+      <section class="slider-section">
+        <mat-checkbox class="slider-margin" [(ngModel)]="showTicks">Show ticks</mat-checkbox>
+        <mat-checkbox class="slider-margin" [(ngModel)]="autoTicks" *ngIf="showTicks">
+          Auto ticks
+        </mat-checkbox>
+        <mat-form-field class="slider-margin" *ngIf="showTicks && !autoTicks">
+          <input matInput type="number" placeholder="Tick interval" [(ngModel)]="tickInterval">
+        </mat-form-field>
+      </section>
+  
+      <section class="slider-section">
+        <mat-checkbox class="slider-margin" [(ngModel)]="thumbLabel">Show thumb label</mat-checkbox>
+      </section>
+  
+      <section class="slider-section">
+        <mat-checkbox class="slider-margin" [(ngModel)]="vertical">Vertical</mat-checkbox>
+        <mat-checkbox class="slider-margin" [(ngModel)]="invert">Inverted</mat-checkbox>
+      </section>
+  
+      <section class="slider-section">
+        <mat-checkbox class="slider-margin" [(ngModel)]="disabled">Disabled</mat-checkbox>
+      </section>
+  
+    </mat-card-content>
+  </mat-card>
+  
+  <mat-card class="result">
+    <mat-card-content>
+      <h2 class="slider-h2">Result</h2>
+  
+      <mat-slider
+          class="slider-margin"
+          [disabled]="disabled"
+          [invert]="invert"
+          [max]="max"
+          [min]="min"
+          [step]="step"
+          [thumbLabel]="thumbLabel"
+          [tickInterval]="tickInterval"
+          [(ngModel)]="value"
+          [vertical]="vertical">
+      </mat-slider>
+    </mat-card-content>
+  </mat-card>
+  

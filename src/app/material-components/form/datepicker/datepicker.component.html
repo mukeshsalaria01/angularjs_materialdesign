@@ -1,0 +1,115 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <h2>Datepicker </h2>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <section fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between start" fxLayoutGap="20px">
+            <div fxFlex>
+              <h3>1. Basic datepicker </h3>
+              <mat-form-field>
+                  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                
+      
+            </div>
+            <div fxFlex>
+              <h3>2. Datepicker start date</h3>
+              <mat-form-field>
+                  <input matInput [matDatepicker]="picker2" placeholder="Choose a date">
+                  <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                  <mat-datepicker #picker2 startView="year" [startAt]="startDate"></mat-datepicker>
+                </mat-form-field>
+                
+            </div>
+            <div fxFlex>
+              <h3>3. Datepicker year range</h3>
+              <mat-form-field class="example-full-width">
+                  <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker3" placeholder="Choose a date">
+                  <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                  <mat-datepicker #picker3></mat-datepicker>
+                </mat-form-field>
+                
+            </div>
+          </section>
+
+          <section fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between start" fxLayoutGap="20px">
+              <div fxFlex>
+                <h3>4. Datepicker selected value</h3>                
+                <mat-form-field>
+                    <input matInput [matDatepicker]="picker4" placeholder="Angular forms (w/ deserialization)"
+                           [formControl]="serializedDate">
+                    <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+                    <mat-datepicker #picker4></mat-datepicker>
+                  </mat-form-field>
+              </div>
+              <div fxFlex>
+                <h3>5. Datepicker touch UI</h3>
+                <mat-form-field class="example-full-width">
+                    <input matInput [matDatepicker]="picker5" placeholder="Choose a date">
+                    <mat-datepicker-toggle matSuffix [for]="picker5"></mat-datepicker-toggle>
+                    <mat-datepicker touchUi="true" #picker5></mat-datepicker>
+                  </mat-form-field>
+                  
+              </div>
+              <div fxFlex>
+                <h3>6. Datepicker open method</h3>
+                <mat-form-field class="example-full-width">
+                    <input matInput [matDatepicker]="picker6" placeholder="Choose a date">
+                    <mat-datepicker #picker6></mat-datepicker>
+                  </mat-form-field>
+                  <button mat-raised-button (click)="picker6.open()">Open</button>
+                  
+                  
+              </div>
+            </section>
+            <section fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-around start" fxLayoutGap="20px">
+                <div fxFlex>
+                  <h3>7. Disabled datepicker</h3>                
+                  <p>
+                      <mat-form-field>
+                        <input matInput [matDatepicker]="dp1" placeholder="Completely disabled" disabled>
+                        <mat-datepicker-toggle matSuffix [for]="dp1"></mat-datepicker-toggle>
+                        <mat-datepicker #dp1></mat-datepicker>
+                      </mat-form-field>
+                    </p>
+                    
+                    <p>
+                      <mat-form-field>
+                        <input matInput [matDatepicker]="dp2" placeholder="Popup disabled">
+                        <mat-datepicker-toggle matSuffix [for]="dp2" disabled></mat-datepicker-toggle>
+                        <mat-datepicker #dp2></mat-datepicker>
+                      </mat-form-field>
+                    </p>
+                    
+                    <p>
+                      <mat-form-field>
+                        <input matInput [matDatepicker]="dp3" placeholder="Input disabled" disabled>
+                        <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+                        <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+                      </mat-form-field>
+                    </p>
+                    
+                </div>
+                <div fxFlex>
+                  <h3>8. Datepicker input and change events</h3>
+                  <mat-form-field>
+                      <input matInput [matDatepicker]="picker8" placeholder="Input & change events"
+                             (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
+                      <mat-datepicker-toggle matSuffix [for]="picker8"></mat-datepicker-toggle>
+                      <mat-datepicker #picker8></mat-datepicker>
+                    </mat-form-field>
+                    
+                    <div class="example-events">
+                      <div *ngFor="let e of events">{{e}}</div>
+                    </div>
+                    
+                </div>
+                
+              </section>
+  
+    </mat-card-content>
+  </mat-card>

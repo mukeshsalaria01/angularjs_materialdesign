@@ -1,0 +1,53 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h2>Spinner  </h2>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+                   
+      <section class="spinner-section">
+        <label class="spinner-margin">Color:</label>
+        <mat-radio-group [(ngModel)]="color">
+          <mat-radio-button class="spinner-margin" value="primary">
+            Primary
+          </mat-radio-button>
+          <mat-radio-button class="spinner-margin" value="accent">
+            Accent
+          </mat-radio-button>
+          <mat-radio-button class="spinner-margin" value="warn">
+            Warn
+          </mat-radio-button>
+        </mat-radio-group>
+      </section>
+  
+      <section class="spinner-section">
+        <label class="spinner-margin">Mode:</label>
+        <mat-radio-group [(ngModel)]="mode">
+          <mat-radio-button class="spinner-margin" value="determinate">
+            Determinate
+          </mat-radio-button>
+          <mat-radio-button class="spinner-margin" value="indeterminate">
+            Indeterminate
+          </mat-radio-button>
+        </mat-radio-group>
+      </section>
+  
+      <section class="spinner-section" *ngIf="mode == 'determinate'">
+        <label class="spinner-margin">Progress:</label>
+        <mat-slider class="spinner-margin" [(ngModel)]="value"></mat-slider>
+      </section>
+    </mat-card-content>
+  </mat-card>
+  <mat-card>
+    <mat-card-content>
+      <h2 class="spinner-h2">Result</h2>
+  
+      <mat-progress-spinner
+          class="spinner-margin"
+          [color]="color"
+          [mode]="mode"
+          [value]="value">
+      </mat-progress-spinner>
+    </mat-card-content>
+  </mat-card>

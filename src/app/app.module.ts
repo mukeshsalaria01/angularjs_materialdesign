@@ -31,6 +31,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { BreadcrumbModule } from './layout/breadcrumb/breadcrumb.module';
 import { ConfirmBoxComponent } from './layout/confirm-box/confirm-box.component';
 import { ConfirmBoxModule } from './layout/confirm-box/confirm-box.module';
+import { MaterialComponentsModule } from './material-components/material-components.module';
 
 
 
@@ -39,7 +40,7 @@ import { ConfirmBoxModule } from './layout/confirm-box/confirm-box.module';
   declarations: [
     AppComponent,
     ComparePasswordDirective,  
-    NotFoundComponent ,
+    NotFoundComponent,  
     
     
   ],
@@ -61,7 +62,8 @@ import { ConfirmBoxModule } from './layout/confirm-box/confirm-box.module';
     ChartsModule,
     DashboardModule,
     BreadcrumbModule,
-    ConfirmBoxModule
+    ConfirmBoxModule,
+    MaterialComponentsModule
  
     
   ],

@@ -1,0 +1,134 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h2>Select Field </h2>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <section fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-around start" fxLayoutGap="20px">
+      <div fxFlex>
+        <h3>1. Basic select</h3>
+        <mat-form-field>
+          <mat-select placeholder="Favorite food">
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{ food.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div fxFlex>
+        <h3>2. Select with 2-way value binding</h3>
+        <mat-form-field>
+          <mat-select [(value)]="selected">
+            <mat-option>None</mat-option>
+            <mat-option value="option1">Option 1</mat-option>
+            <mat-option value="option2">Option 2</mat-option>
+            <mat-option value="option3">Option 3</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <p>Selected Value: {{selected}}</p>
+      </div>
+      <div fxFlex>
+        <h3>3. Select in a form </h3>
+        <form>
+          <mat-form-field>
+            <mat-select placeholder="Favorite food" [(ngModel)]="selectedValue" name="food">
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <p> Selected value: {{selectedValue}} </p>
+        </form>
+
+      </div>
+    </section>
+    <section fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-around start" fxLayoutGap="20px">
+      <div fxFlex>
+        <h3>4. Select with form field </h3>
+        <mat-form-field>
+          <mat-select placeholder="Favorite animal" [formControl]="animalControl" required>
+            <mat-option>--</mat-option>
+            <mat-option *ngFor="let animal of animals" [value]="animal">
+              {{animal.name}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error>
+          <mat-hint>{{animalControl.value?.sound}}</mat-hint>
+        </mat-form-field>
+
+      </div>
+      <div fxFlex>
+        <h3>5. Disable Select</h3>
+        <p>
+          <mat-checkbox [formControl]="disableSelect">Disable select</mat-checkbox>
+        </p>
+        <p>
+          <mat-form-field>
+            <mat-select placeholder="Choose an option" [disabled]="disableSelect.value">
+              <mat-option value="option1">Option 1</mat-option>
+              <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
+              <mat-option value="option3">Option 3</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </p>
+
+      </div>
+      <div fxFlex>
+        <h3>6. Select with reset</h3>
+        <mat-form-field>
+          <mat-select placeholder="State">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </div>
+    </section>
+    <section fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-around start" fxLayoutGap="20px">
+      <div fxFlex>
+        <h3>7. Select with option groups</h3>
+        <mat-form-field>
+          <mat-select placeholder="Pokemon" [formControl]="pokemonControl">
+            <mat-option>-- None --</mat-option>
+            <mat-optgroup *ngFor="let group of pokemonGroups" [label]="group.name" [disabled]="group.disabled">
+              <mat-option *ngFor="let pokemon of group.pokemon" [value]="pokemon.value">
+                {{ pokemon.viewValue }}
+              </mat-option>
+            </mat-optgroup>
+          </mat-select>
+        </mat-form-field>
+
+
+      </div>
+      <div fxFlex>
+        <h3>8. Select with multiple selection</h3>
+        <mat-form-field>
+          <mat-select placeholder="Toppings" [formControl]="toppings" multiple>
+            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+      </div>
+      <div fxFlex>
+        <h3>9. Select with custom trigger text</h3>
+        <mat-form-field>
+          <mat-select placeholder="Toppings" [formControl]="toppings2" multiple>
+            <mat-select-trigger>
+              {{toppings.value ? toppings.value[0] : ''}}
+              <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
+                (+{{toppings.value.length - 1}} others)
+              </span>
+            </mat-select-trigger>
+            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+      </div>
+    </section>
+
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h2>Chips </h2>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-chip-list class="mat-chip-list-stacked">
+      <mat-chip *ngFor="let availability of availabilities" selected="true" [color]="availability.color">
+        {{availability.status}}
+      </mat-chip>
+    </mat-chip-list>
+
+</mat-card-content>
+  </mat-card>

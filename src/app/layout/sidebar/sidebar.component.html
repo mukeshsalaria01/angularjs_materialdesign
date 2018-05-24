@@ -1,9 +1,5 @@
 <mat-drawer-container class="sidebar-container" autosize>
-  <mat-drawer #sidenav 
-  class="sidebar-sidenav md-elevation-z15"                
-  [mode]="mobileQuery.matches ? 'over' : 'side'"
-  [opened]="mobileQuery.matches ? 'false' : 'true'"
-              >
+  <mat-drawer #sidenav class="sidebar-sidenav md-elevation-z15" [mode]="mobileQuery.matches ? 'over' : 'side'" [opened]="mobileQuery.matches ? 'false' : 'true'">
     <!-- <app-sidebar></app-sidebar> -->
     <mat-toolbar color="foreground">
       <span>
@@ -20,10 +16,43 @@
         </mat-expansion-panel-header>
         <a mat-button routerLink="/dashboard/charts">
           <mat-icon>pie_chart</mat-icon> Charts</a>
-          <a mat-button routerLink="/dashboard/data-table">
-            <mat-icon>ballot</mat-icon> Tables</a>
-    
+        
+
       </mat-expansion-panel>
+
+      <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <span>
+                <mat-icon>view_comfy</mat-icon> Components</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          
+          <a mat-button routerLink="/component/data-table">
+            <mat-icon>ballot</mat-icon> Tables</a>
+          <a mat-button routerLink="/component/buttons">
+            <mat-icon>view_module</mat-icon> Components</a>
+          <a mat-button routerLink="/component/form">
+            <mat-icon>event_note</mat-icon> Form</a>
+  
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <span>
+                  <mat-icon>pages</mat-icon> Pages</span>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            
+            <a mat-button routerLink="/login">
+              <mat-icon>fingerprint</mat-icon> Login</a>
+            <a mat-button routerLink="/register">
+              <mat-icon>perm_identity</mat-icon> Register</a>
+              <a mat-button routerLink="/**">
+                <mat-icon>error</mat-icon> Not Found</a>
+    
+          </mat-expansion-panel>
       <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
         <mat-expansion-panel-header>
           <mat-panel-title>
@@ -33,25 +62,30 @@
         </mat-expansion-panel-header>
         <a mat-button routerLink="/membership">
           <mat-icon>people_outline</mat-icon> Manage Members</a>
-    
+
       </mat-expansion-panel>
     </mat-accordion>
   </mat-drawer>
   <mat-toolbar color="warm">
-      <div fxShow="true" fxHide.gt-sm="true">
-        <button mat-button (click)="sidenav.toggle()">
-          <mat-icon>menu</mat-icon>
-        </button>
-      </div>  
-      <span> <ol class="breadcrumb">
-        <li><a routerLink="" class="breadcrumb">Home </a></li>
-        <li><a routerLink="" class="breadcrumb"> / {{pageSlug}}</a></li>
-      </ol></span>      
-    </mat-toolbar>
-  <div class="sidebar-sidenav-content">     
-    <div fxLayout="column" >        
+    <div fxShow="true" fxHide.gt-sm="true">
+      <button mat-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <span>
+      <ol class="breadcrumb">
+        <li>
+          <a routerLink="" class="breadcrumb">Home </a>
+        </li>
+        <li>
+          <a routerLink="" class="breadcrumb"> / {{pageSlug}}</a>
+        </li>
+      </ol>
+    </span>
+  </mat-toolbar>
+  <div class="sidebar-sidenav-content">
+    <div fxLayout="column">
       <router-outlet></router-outlet>
     </div>
   </div>
 </mat-drawer-container>
-

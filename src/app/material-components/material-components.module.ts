@@ -34,6 +34,7 @@ import { TablesComponent } from './tables/tables.component';
 import { FormComponent } from './form/form.component';
 import { ComponentsComponent } from './components/components.component';
 import { ComponentsModule } from './components/components.module';
+import { DemoFormModule } from './demo-form/demo-form.module';
 
 @NgModule({
   imports: [
@@ -65,7 +66,8 @@ import { ComponentsModule } from './components/components.module';
     FormsModule,
     ReactiveFormsModule,
     FormModule,
-    ComponentsModule
+    ComponentsModule,
+    DemoFormModule
 
   ],
   declarations: [MaterialComponentsComponent,

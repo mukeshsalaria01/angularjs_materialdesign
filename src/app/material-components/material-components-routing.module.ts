@@ -4,6 +4,7 @@ import { MaterialComponentsComponent } from './material-components.component';
 import { TablesComponent } from './tables/tables.component';
 import { ComponentsComponent } from './components/components.component';
 import { FormComponent } from './form/form.component';
+import { DemoFormComponent } from './demo-form/demo-form.component';
 
 const routes: Routes = [
   {path: '', component: MaterialComponentsComponent,
@@ -30,11 +31,17 @@ const routes: Routes = [
       data: {
         breadcrumb: "Buttons"
       }
-    }
-    ,
+    },
     {
       path: 'form',
       component: FormComponent,
+      data: {
+        breadcrumb: "Form"
+      }
+    }    ,
+    {
+      path: 'form-demo',
+      component: DemoFormComponent,
       data: {
         breadcrumb: "Form"
       }

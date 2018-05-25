@@ -1,0 +1,342 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h2>Step Form </h2>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <div fxFlex fxLayout="column">
+      <div fxFlex>
+
+        <!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+                  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+                </button> -->
+        <mat-horizontal-stepper [linear]="isLinear" #stepper>
+          <mat-step [stepControl]="loginFormGroup">
+            <form [formGroup]="loginFormGroup" (ngSubmit)="loginDetail(loginFormGroup.value)">
+              <ng-template matStepLabel> Login Credentials</ng-template>
+              <div fxFlex fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.gt-md="20px">
+                <mat-form-field class="full-width" fxFlex>
+                  <input matInput placeholder="Username" formControlName="username">
+                  <mat-error *ngIf="(loginFormGroup.get('username').invalid && 
+                  (loginFormGroup.get('username').dirty || 
+                  loginFormGroup.get('username').touched || 
+                   isSubmit))">
+                    <span *ngIf="loginFormGroup.get('username').errors?.required ">
+                      Please Enter Username.
+                    </span>
+                    <span *ngIf="loginFormGroup.get('username').errors?.minlength">
+                      Username must be at least 6 characters long.
+                    </span>                 
+                  </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="full-width" fxFlex>
+                  <input matInput placeholder="Email" formControlName="email">
+                  <mat-error *ngIf="(loginFormGroup.get('email').invalid && 
+                  (loginFormGroup.get('email').dirty || 
+                  loginFormGroup.get('email').touched || 
+                   isSubmit))">
+
+                    <span *ngIf="loginFormGroup.get('email').errors?.required ">
+                      Please Enter Email.
+                    </span>
+                    <span *ngIf="loginFormGroup.get('email').errors?.email ">
+                        Please Enter Correct Email.
+                      </span>
+
+                  </mat-error>
+                </mat-form-field>
+
+              </div>
+              <div fxFlex fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.gt-md="20px">
+                <mat-form-field class="full-width" fxFlex>
+                  <input type="password" matInput placeholder="Password" formControlName="password">
+                  <mat-error *ngIf="(loginFormGroup.get('password').invalid && 
+                  (loginFormGroup.get('password').dirty || 
+                  loginFormGroup.get('password').touched || 
+                   isSubmit))">
+                    <span *ngIf="loginFormGroup.get('password').errors?.required ">
+                      Please Enter Password.
+                    </span>
+                    <span *ngIf="loginFormGroup.get('password').errors?.minlength ">
+                        Password must be at least 6 characters long.
+                      </span>
+                  </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="full-width" fxFlex>
+                  <input type="password" matInput placeholder="Confirm Password" formControlName="confirmPassword">
+                  <mat-error *ngIf="(loginFormGroup.get('confirmPassword').invalid && 
+                  (loginFormGroup.get('confirmPassword').dirty || 
+                  loginFormGroup.get('confirmPassword').touched || 
+                   isSubmit))">
+                    <span *ngIf="loginFormGroup.get('confirmPassword').errors?.required ">
+                      Please Re-enter Password.
+                    </span>
+                    <span *ngIf="loginFormGroup.get('confirmPassword').errors?.minlength ">
+                        Password must be at least 6 characters long.
+                      </span>
+                  </mat-error>
+                </mat-form-field>
+
+              </div>
+              <div>
+                <div class="form-button" fxFlex fxLayoutGap="20px">
+                  <button fxFlex color="primary" mat-raised-button matStepperNext [disabled]="!loginFormGroup.valid">
+                    Next
+                    <mat-icon>navigate_next</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step [stepControl]="bioFormGroup">
+            <form [formGroup]="bioFormGroup" (ngSubmit)="bioDetail(bioFormGroup.value)">
+              <ng-template matStepLabel>Bio</ng-template>
+              <div fxFlex fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.gt-md="20px">
+
+                <mat-form-field class="full-width" fxFlex>
+                  <input matInput placeholder="Title" formControlName="title">
+                  <mat-error *ngIf="(bioFormGroup.get('title').invalid && 
+                  (bioFormGroup.get('title').dirty || 
+                  bioFormGroup.get('title').touched || 
+                   isSubmit))">
+
+                    <span *ngIf="bioFormGroup.get('title').errors?.required ">
+                      Please Enter Title.
+                    </span>
+
+                  </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="full-width" fxFlex>
+                  <input matInput placeholder="First name" formControlName="firstName">
+                  <mat-error *ngIf="(bioFormGroup.get('firstName').invalid && 
+                  (bioFormGroup.get('firstName').dirty || 
+                  bioFormGroup.get('firstName').touched || 
+                   isSubmit))">
+
+                    <span *ngIf="bioFormGroup.get('firstName').errors?.required ">
+                      Please Enter Firstname.
+                    </span>
+
+                  </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="full-width" fxFlex>
+                  <input matInput placeholder="Last name" formControlName="lastName">
+                  <mat-error *ngIf="(bioFormGroup.get('lastName').invalid && 
+                  (bioFormGroup.get('lastName').dirty || 
+                  bioFormGroup.get('lastName').touched || 
+                   isSubmit))">
+
+                    <span *ngIf="bioFormGroup.get('lastName').errors?.required ">
+                      Please Enter Lastname.
+                    </span>
+
+                  </mat-error>
+                </mat-form-field>
+
+              </div>
+
+              <div fxFlex fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.gt-md="20px">
+                <mat-form-field class="full-width" fxFlex>
+                  <mat-select placeholder="Gender" formControlName="gender">
+                    <mat-option *ngFor="let gender of genders" [value]="gender.value">
+                      {{ gender.viewValue }}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error *ngIf="(bioFormGroup.get('gender').invalid && 
+                  (bioFormGroup.get('gender').dirty || 
+                  bioFormGroup.get('gender').touched || 
+                   isSubmit))">
+
+                    <span *ngIf="bioFormGroup.get('gender').errors?.required ">
+                      Please Choose Gender.
+                    </span>
+
+                  </mat-error>
+                </mat-form-field>
+
+
+                <mat-form-field class="full-width" fxFlex>
+                  <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="dobpicker" placeholder="Date of birth" formControlName="dob">
+                  <mat-datepicker-toggle matSuffix [for]="dobpicker"></mat-datepicker-toggle>
+                  <mat-datepicker #dobpicker></mat-datepicker>
+                  <mat-error *ngIf="(bioFormGroup.get('dob').invalid && 
+                  (bioFormGroup.get('dob').dirty || 
+                  bioFormGroup.get('dob').touched || 
+                   isSubmit))">
+
+                    <span *ngIf="bioFormGroup.get('dob').errors?.required ">
+                      Please Choose a Date.
+                    </span>
+
+                  </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="full-width" fxFlex>
+                  <mat-select placeholder="Blood Group" formControlName="bloodGroup">
+                    <mat-option *ngFor="let group of groups" [value]="group.value">
+                      {{ group.viewValue }}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error *ngIf="(bioFormGroup.get('bloodGroup').invalid && 
+                  (bioFormGroup.get('bloodGroup').dirty || 
+                  bioFormGroup.get('bloodGroup').touched || 
+                   isSubmit))">
+
+                    <span *ngIf="bioFormGroup.get('bloodGroup').errors?.required ">
+                      Please Choose Blood Group.
+                    </span>
+
+                  </mat-error>
+                </mat-form-field>
+
+              </div>
+              <div>
+                <div class="form-button" fxFlex fxLayoutGap="20px">
+                  <button fxFlex color="basic" mat-raised-button matStepperPrevious>
+                    <mat-icon>arrow_back_ios</mat-icon> Back</button>
+                  <button fxFlex color="primary" mat-raised-button matStepperNext [disabled]="!bioFormGroup.valid">
+                    Next
+                    <mat-icon>navigate_next</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step [stepControl]="contactFormGroup">
+            <form [formGroup]="contactFormGroup" (ngSubmit)="contactDetail(contactFormGroup.value)">
+              <ng-template matStepLabel>Contact</ng-template>
+              <div fxFlex fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.gt-md="20px">
+                <mat-form-field class="full-width" fxFlex>
+                  <span matPrefix>+91 &nbsp;</span>
+                  <input type="tel" matInput placeholder="Mobile" formControlName="mobile">
+                  <!-- <mat-icon matSuffix>mode_edit</mat-icon> -->
+                  <mat-error *ngIf="(contactFormGroup.get('mobile').invalid && 
+                  (contactFormGroup.get('mobile').dirty || 
+                  contactFormGroup.get('mobile').touched || 
+                   isSubmit))">
+                    <span *ngIf="contactFormGroup.get('mobile').errors?.required ">
+                      Please Enter Mobile Number.
+                    </span>
+                    <span *ngIf="contactFormGroup.get('mobile').errors?.pattern ">
+                      Please Enter Numbers Only.
+                    </span>
+
+                  </mat-error>
+                </mat-form-field>
+
+
+                <mat-form-field class="full-width" fxFlex>
+                  <input type="tel" matInput placeholder="Telephone" formControlName="telephone">
+                  <mat-error *ngIf="(contactFormGroup.get('telephone').invalid && 
+                  (contactFormGroup.get('telephone').dirty || 
+                  contactFormGroup.get('telephone').touched || 
+                   isSubmit))">
+                    <span *ngIf="contactFormGroup.get('telephone').errors?.required ">
+                      Please Enter Telephone Number.
+                    </span>
+                    <span *ngIf="contactFormGroup.get('telephone').errors?.pattern ">
+                      Please Enter Numbers Only.
+                    </span>
+
+                  </mat-error>
+                </mat-form-field>
+              </div>
+
+              <div fxFlex fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.gt-md="20px">
+                <mat-form-field class="full-width">
+                    <textarea matInput #address  maxlength="256" placeholder="Address" formControlName="address"></textarea>
+                  <!-- <input matInput #address maxlength="256" placeholder="Address" formControlName="address"> -->
+                  <mat-hint align="start">
+                    <strong>Enter permanent address.</strong>
+                  </mat-hint>
+                  <mat-hint align="end">{{address.value.length}} / 256</mat-hint>
+                  <mat-error *ngIf="(contactFormGroup.get('address').invalid && 
+                  (contactFormGroup.get('address').dirty || 
+                  contactFormGroup.get('address').touched || 
+                   isSubmit))">
+
+                    <span *ngIf="contactFormGroup.get('address').errors?.required ">
+                      Please Enter Address.
+                    </span>
+
+                  </mat-error>
+                </mat-form-field>
+              </div>
+
+              <div fxFlex fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.gt-md="20px">
+                <mat-form-field class="full-width" fxFlex>
+                  <input matInput placeholder="City" formControlName="city">
+                  <mat-error *ngIf="(contactFormGroup.get('city').invalid && 
+                  (contactFormGroup.get('city').dirty || 
+                  contactFormGroup.get('city').touched || 
+                   isSubmit))">
+
+                    <span *ngIf="contactFormGroup.get('city').errors?.required">
+                      Please Enter City
+                    </span>
+
+                  </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="full-width" fxFlex>
+                  <input matInput placeholder="State" formControlName="state">
+                  <mat-error *ngIf="(contactFormGroup.get('state').invalid && 
+                  (contactFormGroup.get('state').dirty || 
+                  contactFormGroup.get('state').touched || 
+                   isSubmit))">
+
+                    <span *ngIf="contactFormGroup.get('state').errors?.required">
+                      Please Enter State.
+                    </span>
+
+                  </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="full-width" fxFlex>
+                  <input matInput #postalCode maxlength="6" placeholder="Postal Code" value="123459" formControlName="postalCode">
+                  <mat-hint align="end">{{postalCode.value.length}} / 6</mat-hint>
+                  <mat-error *ngIf="(contactFormGroup.get('postalCode').invalid && 
+                  (contactFormGroup.get('postalCode').dirty || 
+                  contactFormGroup.get('postalCode').touched || 
+                   isSubmit))">
+                    <span *ngIf="contactFormGroup.get('postalCode').errors?.required">
+                      Please Enter Postal Code.
+                    </span>
+                    <span *ngIf="contactFormGroup.get('postalCode').errors?.minlength">
+                        Please Enter Complete Postal Code.
+                      </span>
+
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div>
+                <div class="form-button" fxFlex fxLayoutGap="20px">
+                  <button fxFlex color="basic" mat-raised-button matStepperPrevious>
+                    <mat-icon>arrow_back_ios</mat-icon> Back</button>
+                  <button fxFlex color="primary" mat-raised-button [disabled]="!bioFormGroup.valid">
+                    Save
+                    <mat-icon>save</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </mat-step>
+
+
+
+        </mat-horizontal-stepper>
+
+      </div>
+    </div>
+
+
+  </mat-card-content>
+</mat-card>
